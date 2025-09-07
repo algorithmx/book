@@ -26,7 +26,7 @@ the extended offset surfaces the vertices are based on.
 
 ![Fig. 5.7.2.](image2)
 
-The edge is called smooth, if the normals of the faces joined by it coincide throughout the entire edge. A smooth edge on an offset solid corresponds to a smooth edge of the base solid. Moreover, the intersection curves of such edges pass through the same points \([u v]^T\) of the corresponding surfaces of the base solid and the offset solid.
+The edge is called smooth, if the normals of the faces joined by it coincide throughout the entire edge. A smooth edge on an offset solid corresponds to a smooth edge of the base solid. Moreover, the intersection curves of such edges pass through the same points $[u v]^T$ of the corresponding surfaces of the base solid and the offset solid.
 
 Next we construct the edges of the offset shell. Each edge is based on the intersection curve of the offset surfaces. The starting and ending points of the edges provide us with the vertices. The corresponding edge of the base solid can serve as the guide curve for constructing the edge of the offset shell. Fig. 5.7.3 shows the intersection curves of the extended offset surfaces the edges are based on.
 
@@ -36,7 +36,7 @@ Using the edges, construct the loops of the offset faces (see Fig. 5.7.4). This 
 
 ![Fig. 5.7.4.](image4)
 
-If more than three non-smooth edges are joined at a vertex of the base solid, then in the offset solid this vertex corresponds to several vertices and new edges. All of them can be found as the points of intersections of triples of surfaces, or as the points of intersections of the smooth edges and surfaces of the offset solid. Fig. 5.7.5 shows a pyramid and a corresponding offset solid, with a negative offset parameter; Fig. 5.7.6 shows a similar pyramid and an offset solid with a positive offset parameter corresponding to it. Four edges are joined at vertex \(A\) of the pyramid. This vertex corresponds to two vertices \(B\) and \(C\), and one additional edge \(BC\), in the offset solid.
+If more than three non-smooth edges are joined at a vertex of the base solid, then in the offset solid this vertex corresponds to several vertices and new edges. All of them can be found as the points of intersections of triples of surfaces, or as the points of intersections of the smooth edges and surfaces of the offset solid. Fig. 5.7.5 shows a pyramid and a corresponding offset solid, with a negative offset parameter; Fig. 5.7.6 shows a similar pyramid and an offset solid with a positive offset parameter corresponding to it. Four edges are joined at vertex $A$ of the pyramid. This vertex corresponds to two vertices $B$ and $C$, and one additional edge $BC$, in the offset solid.
 It is possible that there is no analogy to a vertex, an edge, or a face of the base solid in the offset shell. In such solids, we have self-intersections of the shell and self-intersections of the loops of some faces after the above steps. That is, the faces that do not intersect in the base shell intersect in the offset shell. To handle such situations, one should check for any intersection of non-adjacent offset faces. If there are any, you should construct the intersection edges and reconstruct their loops as in the union of solids.
 
 Fig. 5.7.7 on the right and on the left shows offset solids constructed on the base solid shown in the center. For the solid shown in Fig. 5.7.7 on the left $h>0$. For the solid shown in Fig. 5.7.7 on the right $h<0$. The number of faces, edges, and vertices of the offset solids may differ from the number of faces, edges, and vertices of the base solid.
@@ -80,17 +80,17 @@ Fig. 5.8.6.
 5.9. Filleting Solid Edges
 
 A smooth transition from one face of a solid to another called a face conjunction. One way of producing a face conjunction is by filleting the edges of a solid. Solid edge filleting has many varieties. In the simplest case, to fillet an edge means to replace it with the face obtained by sweeping a sphere of a given radius osculating simultaneously with two faces adjacent to the edge. The result of filleting two convex edges and one concave edge of the solid shown in Fig. 5.9.1 is shown in Fig. 5.9.2.
-In certain cases, the fillet face may be based on a cylindrical surface or on the surface of a torus. Let us consider the general case of filleting an arbitrary curvilinear edge. Assume that the face located on the right of the filleted edge when viewed from outside the solid along the edge is based on surface \( r(u,v) \), and the face located on the left of the filleted edge is based on surface \( s(a,b) \). These faces and their surfaces are called conjunct. Let the filleted edge be based on the curve of intersection \( c(s) \) of surfaces \( r(u,v) \) and \( s(a,b) \). Construct a fillet surface (3.9.1) on curve \( c(s) \); the fillet surface is osculated with the conjunct surfaces along the curves
+In certain cases, the fillet face may be based on a cylindrical surface or on the surface of a torus. Let us consider the general case of filleting an arbitrary curvilinear edge. Assume that the face located on the right of the filleted edge when viewed from outside the solid along the edge is based on surface $r(u,v)$, and the face located on the left of the filleted edge is based on surface $s(a,b)$. These faces and their surfaces are called conjunct. Let the filleted edge be based on the curve of intersection $c(s)$ of surfaces $r(u,v)$ and $s(a,b)$. Construct a fillet surface (3.9.1) on curve $c(s)$; the fillet surface is osculated with the conjunct surfaces along the curves
 
 $$
 c_r(t) = r(u(t), v(t)) \quad \text{and} \quad c_s(t) = s(a(t), b(t)).
 $$
 
-The parameter \( t \) is common to the curves \( c_r(t) \) and \( c_s(t) \), and to the fillet surface \( q(t,z) \).
+The parameter $t$ is common to the curves $c_r(t)$ and $c_s(t)$, and to the fillet surface $q(t,z)$.
 
-Let us find the intersection of reference curves \( c_r(t) \) and \( c_s(t) \) with the edges of the conjunct faces, and modify these edges. In some cases, the original edges are trimmed; in other cases, they must be extended. If the filleted edge is not cyclic closed, we shall also find the intersection of the fillet surface with the edges of the solid joined with the filleted edge and not belonging to the conjunct faces. These edges should also be trimmed by the fillet surface, or extended to their intersection with the fillet surface.
+Let us find the intersection of reference curves $c_r(t)$ and $c_s(t)$ with the edges of the conjunct faces, and modify these edges. In some cases, the original edges are trimmed; in other cases, they must be extended. If the filleted edge is not cyclic closed, we shall also find the intersection of the fillet surface with the edges of the solid joined with the filleted edge and not belonging to the conjunct faces. These edges should also be trimmed by the fillet surface, or extended to their intersection with the fillet surface.
 
-Next we construct the edges along which the fillet surface joins with the reference faces. Let the curve \( c_r(t) \) coincide with \( q(t,z_{\min}) \), and curve \( c_s(t) \) coincide with \( q(t,z_{\max}) \). Construct two edges along the borders of the fillet surface on the basis of the intersection curves
+Next we construct the edges along which the fillet surface joins with the reference faces. Let the curve $c_r(t)$ coincide with $q(t,z_{\min})$, and curve $c_s(t)$ coincide with $q(t,z_{\max})$. Construct two edges along the borders of the fillet surface on the basis of the intersection curves
 
 $$
 c_1(t) = \begin{cases} 
@@ -108,7 +108,7 @@ $$
 
 These edges are called longitudinal, as they are directed along the filleted edge and have the same orientation.
 
-If the filleted edge is cyclic closed, then the fillet surface is also cyclic closed with respect to parameter \( t \). Then, on the basis of the intersection curve
+If the filleted edge is cyclic closed, then the fillet surface is also cyclic closed with respect to parameter $t$. Then, on the basis of the intersection curve
 
 $$
 c_0(t) = \begin{cases} 
@@ -122,9 +122,9 @@ If the filleted edge is not cyclic closed, we construct the curves along which t
 
 On the basis of the fillet surface, construct a face. The loop of this face consists of the constructed longitudinal and transverse edges or the junction. Define the attribute of coincidence of the normals to the fillet faces with the direction of the surface normal. The normal to the fillet face should be directed outside the solid; the direction of the normal to the fillet surface may coincide with it or be opposite.
 
-Now reconstruct the loops of the faces on conjunct surfaces \( r(u,v) \) and \( s(a,b) \). Instead of the filleted edge, the edge based on intersection curve \( c_1 \) is included in the loop of face \( r(u,v) \), and the edge based on intersection curve \( c_2 \) is included in the loop of face \( s(a,b) \) (see Fig. 5.9.3).
+Now reconstruct the loops of the faces on conjunct surfaces $r(u,v)$ and $s(a,b)$. Instead of the filleted edge, the edge based on intersection curve $c_1$ is included in the loop of face $r(u,v)$, and the edge based on intersection curve $c_2$ is included in the loop of face $s(a,b)$ (see Fig. 5.9.3).
 
-Next, reconstruct the loops of the other faces that intersect with fillet surface \( q(t,z) \).
+Next, reconstruct the loops of the other faces that intersect with fillet surface $q(t,z)$.
 
 ![Fig. 5.9.3.](image)
 
@@ -225,7 +225,7 @@ When choosing a fillet surface for the modification, we modify the fillet radius
 Consider two methods of solid deformation: scaling and local deformation.
 
 **Scaling** is applicable to all manifold solids, without exception. Scaling is reduced to the matrix transformation of the data of the vertices, edges, and faces of the solid. We use an augmented matrix (1.14.7) as the scaling matrix. When dealing with this
-matrix, it is assumed that the radius-vectors have the form of (1.14.8), and the vectors have the form of (1.14.9). The scaling matrix is described by coordinates \( p_1, p_2, \) and \( p_3 \) of the fixed point, and by the scale factors on the axes \( k_1, k_2, \) and \( k_3; \) and has the form
+matrix, it is assumed that the radius-vectors have the form of (1.14.8), and the vectors have the form of (1.14.9). The scaling matrix is described by coordinates $p_1, p_2,$ and $p_3$ of the fixed point, and by the scale factors on the axes $k_1, k_2,$ and $k_3;$ and has the form
 
 $$
 M = \begin{bmatrix}
@@ -236,7 +236,7 @@ k_1 & 0 & 0 & t_1 \\
 \end{bmatrix},
 $$
 
-where \( t_i = (1-k_i)p_i, \ i=1,2,3. \) If \( k_1=k_2=k_3, \) then the scaling is isotropic; otherwise, the scaling is anisotropic. Any solid and any shell can be scaled in accordance with a given matrix. Fig. 5.13.1 shows a solid before scaling. Fig. 5.13.2 shows the solid after anisotropic scaling.
+where $t_i = (1-k_i)p_i, \ i=1,2,3.$ If $k_1=k_2=k_3,$ then the scaling is isotropic; otherwise, the scaling is anisotropic. Any solid and any shell can be scaled in accordance with a given matrix. Fig. 5.13.1 shows a solid before scaling. Fig. 5.13.2 shows the solid after anisotropic scaling.
 
 ![Fig. 5.13.1.](image1)
 

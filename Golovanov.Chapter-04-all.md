@@ -89,11 +89,11 @@ One-sided shells are referred to as non-orientable because for such shells we ca
 
 **Topological type** characterizes a shell, like connectivity. Closed shells have odd connectivity. For such shells, the Euler characteristic $H$ is related to its connectivity $h$ by
 
-$$H = 3 - h.$$  
+$$H = 3 - h.$$
 
 For closed orientable shells, the Euler formula can be expressed in the form
 
-$$F - E + V + (F - L) = 3 - h.$$  
+$$F - E + V + (F - L) = 3 - h.$$
 
 From deforming a torus we can obtain a dumbbell-shaped shell, which we call a sphere with a handle. In general, any closed shell can be shaped by deformation into a
 sphere with $G$ handles. For instance, if we take a thick plate, punch $G$ holes in it and round all the edges, we obtain an object the shell of which has the topology of a sphere with $G$ handles. Parameter $G$ (genus) characterizes the topological type of a shell. Fig. 4.2.10 shows a sphere with four handles.
@@ -175,9 +175,9 @@ Let us illustrate the general principles of description of a geometric shape of 
 
 4.6. Elementary Solids
 
-The elementary solids are a prism, a cylinder, a cone, a sphere, and a torus. Elementary solids are composed of a single shell. For each elementary solid, choose the local rectangular Cartesian coordinate system with radius-vector of the origin denoted as \( p \) and basis vectors denoted by \( i_x, i_y, \) and \( i_z \).
+The elementary solids are a prism, a cylinder, a cone, a sphere, and a torus. Elementary solids are composed of a single shell. For each elementary solid, choose the local rectangular Cartesian coordinate system with radius-vector of the origin denoted as $p$ and basis vectors denoted by $i_x, i_y,$ and $i_z$.
 
-A rectangular prism is composed of six faces. Let us place the origin of a local Cartesian coordinate system at one of the vertices of the prism and direct its basis vectors along the edges joined at this vertex, as in Fig. 4.6.1. Let the solid have length \( x \) in the direction of basis vector \( i_x \), length \( y \) in the direction of basis vector \( i_y \), and length \( z \) in the direction of basis vector \( i_z \).
+A rectangular prism is composed of six faces. Let us place the origin of a local Cartesian coordinate system at one of the vertices of the prism and direct its basis vectors along the edges joined at this vertex, as in Fig. 4.6.1. Let the solid have length $x$ in the direction of basis vector $i_x$, length $y$ in the direction of basis vector $i_y$, and length $z$ in the direction of basis vector $i_z$.
 
 Each face of the prism is a part of the plane with the attribute of orientation of the plane normal outside of the solid, and with one loop. The faces of the prism are described by the surfaces
 
@@ -192,13 +192,13 @@ $$ r_4(u_4,v_4) = p + u_4i_x + v_4i_y + z i_z, \quad u_4 \in [0, x], \quad v_4 \
 $$ r_5(u_5,v_5) = p + u_5i_y + v_5i_z + x i_x, \quad u_5 \in [0, y], \quad v_5 \in [0, z], $$
 $$ r_6(u_6,v_6) = p + u_6i_x + v_6i_z + y i_y, \quad u_6 \in [0, x], \quad v_6 \in [0, z]. $$
 
-Normals to surfaces \( r_3, r_4, \) and \( r_5 \) coincide with the normals to the corresponding faces, and the normals to the surfaces \( r_1, r_2, \) and \( r_6 \) have the opposite directions to the normals to the corresponding faces. This information is contained in the face in the form of the attribute of coincidence of normals. A rectangular prism has twelve edges. Each face consists of the curves of surfaces that intersect with adjacent faces, and an attribute of coincidence of the edge direction with the direction of the intersection curve. Each intersection curve consists of two surface curves: one on the surface of one face, and the other on the surface of the other face. Both surface curves have the same geometric and parametric length and fully coincide in the space. Each curve on the surface is a combination of the surface and the planar curve in the parameter space.
+Normals to surfaces $r_3, r_4,$ and $r_5$ coincide with the normals to the corresponding faces, and the normals to the surfaces $r_1, r_2,$ and $r_6$ have the opposite directions to the normals to the corresponding faces. This information is contained in the face in the form of the attribute of coincidence of normals. A rectangular prism has twelve edges. Each face consists of the curves of surfaces that intersect with adjacent faces, and an attribute of coincidence of the edge direction with the direction of the intersection curve. Each intersection curve consists of two surface curves: one on the surface of one face, and the other on the surface of the other face. Both surface curves have the same geometric and parametric length and fully coincide in the space. Each curve on the surface is a combination of the surface and the planar curve in the parameter space.
 
 ![Fig. 4.6.1.](image1)
 
 ![Fig. 4.6.2.](image2)
 
-Let us describe the loop of the first face based on the surface \( r_1 \). Edges for the loop are constructed on the curves of intersection of surface \( r_1 \) and surfaces \( r_3, r_5, r_6, \) and \( r_2 \):
+Let us describe the loop of the first face based on the surface $r_1$. Edges for the loop are constructed on the curves of intersection of surface $r_1$ and surfaces $r_3, r_5, r_6,$ and $r_2$:
 
 $$
 e_{13}(t) = \begin{cases} 
@@ -212,12 +212,12 @@ r_1(0,yt) & r_2(yt,0) \\
 \end{cases}
 $$
 
-Let the direction of each edge coincide with the direction of the corresponding curve that we put in the coincidence attributes of the directions of the edges and the curves on which they are based. A loop of the first face is described by the list of curves on which the edges are based, with plus or minus signs corresponding to the flags of the edges: \( +e_{12}, +e_{16}, -e_{15}, \) and \( -e_{13} \). If the edge enters the loop with a positive flag, then by moving along the loop, the edge is traversed from start to end. If the edge enters the loop with a negative flag, then by moving along the loop, the edge is traversed from end to start. For the loop it does not matter from which edge the list is started. The list of edges is cyclic closed. What is important is the sequence of edges, and the coincidence of the direction of edges with the direction of the loop. Recall that when
+Let the direction of each edge coincide with the direction of the corresponding curve that we put in the coincidence attributes of the directions of the edges and the curves on which they are based. A loop of the first face is described by the list of curves on which the edges are based, with plus or minus signs corresponding to the flags of the edges: $+e_{12}, +e_{16}, -e_{15},$ and $-e_{13}$. If the edge enters the loop with a positive flag, then by moving along the loop, the edge is traversed from start to end. If the edge enters the loop with a negative flag, then by moving along the loop, the edge is traversed from end to start. For the loop it does not matter from which edge the list is started. The list of edges is cyclic closed. What is important is the sequence of edges, and the coincidence of the direction of edges with the direction of the loop. Recall that when
 moving along the loop the edge always lies to the left, if we move along the outer side of the face.
 
 The remaining faces and edges of the prism have a similar structure. Eight vertices are located in the corners of the prism. The orientation of the loops of faces of a rectangular prism is shown in Fig. 4.6.2. Lines with arrows indicate the motion near the loops of the three faces of the prism.
 
-A cylinder has three faces, three edges, and two vertices. Let us place the origin of a local coordinate system \( p \) in the center of one of the end faces of the cylinder, and direct basis vector \( i_z \) along its axis. Suppose the cylinder has radius \( r \) and length \( h \).
+A cylinder has three faces, three edges, and two vertices. Let us place the origin of a local coordinate system $p$ in the center of one of the end faces of the cylinder, and direct basis vector $i_z$ along its axis. Suppose the cylinder has radius $r$ and length $h$.
 
 Let the side face of the solid be based on a cylindrical surface
 
@@ -225,9 +225,9 @@ $$
 r_1(u_1,v_1) = p + r \cos u_1 i_x + r \sin u_1 i_y + h v_1 i_z,
 $$
 
-where \( u_1 \in [0, 2\pi] \), \( v_1 \in [0, 1] \).
+where $u_1 \in [0, 2\pi]$, $v_1 \in [0, 1]$.
 
-The normals to the surface \( r_1 \) and its faces have the same directions. Let the faces of the base be based on the planes
+The normals to the surface $r_1$ and its faces have the same directions. Let the faces of the base be based on the planes
 
 $$
 r_2(u_2,v_2) = p + u_2 i_x + v_2 i_y,
@@ -236,7 +236,7 @@ $$
 r_3(u_3,v_3) = p + u_3 i_x + v_3 i_y + h i_z,
 $$
 
-where parameters \( u_2 \) and \( v_2 \) lie inside circle \( u_2(t) = r \cos t \), \( v_2(t) = r \sin t \), \( 0 \leq t \leq 2\pi \), and parameters \( u_3 \) and \( v_3 \) lie inside circle \( u_3(t) = r \cos t \), \( v_3(t) = r \sin t \), \( t \in [0, 2\pi] \). The normals to surface \( r_2 \) and its faces have opposite directions, and the normal to surface \( r_3 \) and its faces coincide. Surface \( r_1 \) intersects with surfaces \( r_2 \) and \( r_3 \) along the curves
+where parameters $u_2$ and $v_2$ lie inside circle $u_2(t) = r \cos t$, $v_2(t) = r \sin t$, $0 \leq t \leq 2\pi$, and parameters $u_3$ and $v_3$ lie inside circle $u_3(t) = r \cos t$, $v_3(t) = r \sin t$, $t \in [0, 2\pi]$. The normals to surface $r_2$ and its faces have opposite directions, and the normal to surface $r_3$ and its faces coincide. Surface $r_1$ intersects with surfaces $r_2$ and $r_3$ along the curves
 
 $$
 e_{12}(t) = \begin{cases} 
@@ -246,9 +246,9 @@ r_1(t,h) \\ r_3(r \cos t, r \sin t)
 \end{cases},
 $$
 
-\( t \in [0, 2\pi] \).
+$t \in [0, 2\pi]$.
 
-The cylindrical surface \( r_1 \) of the side face is cyclic closed with respect to the first parameter. The edge constructed on the closing line of the shell is a juncture. The juncture, like any other edge, is based on the curve of intersection, which in this case has the form
+The cylindrical surface $r_1$ of the side face is cyclic closed with respect to the first parameter. The edge constructed on the closing line of the shell is a juncture. The juncture, like any other edge, is based on the curve of intersection, which in this case has the form
 
 $$
 e_{11}(t) = \begin{cases} 
@@ -256,7 +256,7 @@ r_1(0,ht) \\ r_1(2\pi,ht)
 \end{cases}, \quad t \in [0, 1].
 $$
 
-Let the direction of each edge of the cylinder coincide with the intersection curve it is based on. The loop of the cylindrical face is described by the list of curves the edges are based on, with signs of their flags corresponding to these edges: \( +e_{12}, +e_{11}, -e_{13}, \) and \( -e_{11} \). The loop of the second face consists of one edge based on curve \( e_{12} \) with negative flag. The loop of the third face consists of one edge based on curve \( e_{13} \) with positive flag. The vertices are located at the points of junction of curves \( e_{12} \) and \( e_{13} \) with curve \( e_{11} \).
+Let the direction of each edge of the cylinder coincide with the intersection curve it is based on. The loop of the cylindrical face is described by the list of curves the edges are based on, with signs of their flags corresponding to these edges: $+e_{12}, +e_{11}, -e_{13},$ and $-e_{11}$. The loop of the second face consists of one edge based on curve $e_{12}$ with negative flag. The loop of the third face consists of one edge based on curve $e_{13}$ with positive flag. The vertices are located at the points of junction of curves $e_{12}$ and $e_{13}$ with curve $e_{11}$.
 The cylinder is shown in Fig. 4.6.3. The thin line indicates the juncture of a cylindrical face and the lines with arrowheads indicate motion near the loops of the two faces of the solid.
 
 Fig. 4.6.3.
@@ -270,16 +270,16 @@ One of the base faces is based on the surface
 
 $$ r_3(u_3,v_3) = p + u_3 i_x + v_3 i_y + h i_z, $$
 
-where parameters \( u_3 \) and \( v_3 \) lie inside circle \( u_3(t) = (r + htg \gamma) \cos t, \quad v_3(t) = (r + htg \gamma) \sin t, \quad t \in [0, 2\pi] \). Surface \( r_1 \) intersects with surface \( r_3 \) along the curve
+where parameters $u_3$ and $v_3$ lie inside circle $u_3(t) = (r + htg \gamma) \cos t, \quad v_3(t) = (r + htg \gamma) \sin t, \quad t \in [0, 2\pi]$. Surface $r_1$ intersects with surface $r_3$ along the curve
 
 $$ e_{13}(t) = \begin{cases} 
 r_1(t,h) \\ 
 r_3((r + htg \gamma) \cos t, (r + htg \gamma) \sin t) 
 \end{cases}, \quad t \in [0, 2\pi]. $$
 
-In general, a cone has three faces. If \( r > 0 \) and \( r + htg \gamma = 0 \), or \( r = 0 \) and \( \gamma > 0 \), then one of the end faces degenerates to a point. A face that degenerates to a point can be excluded from solid, and then the shell of the solid has a pole. A cone with a pole at its top vertex is shown in Fig. 4.6.4. The thin line indicates the juncture of the conical face, and the line with an arrowhead indicates the motion near the loop of this face.
+In general, a cone has three faces. If $r > 0$ and $r + htg \gamma = 0$, or $r = 0$ and $\gamma > 0$, then one of the end faces degenerates to a point. A face that degenerates to a point can be excluded from solid, and then the shell of the solid has a pole. A cone with a pole at its top vertex is shown in Fig. 4.6.4. The thin line indicates the juncture of the conical face, and the line with an arrowhead indicates the motion near the loop of this face.
 
-A sphere has a single face, three edges, and two vertices. The origin of a local coordinate system \( p \) is placed at the center of the sphere and describes the solid by the surface
+A sphere has a single face, three edges, and two vertices. The origin of a local coordinate system $p$ is placed at the center of the sphere and describes the solid by the surface
 
 $$ r(u,v) = p + r \cos v (\cos u i_x + \sin u i_y) + r \sin v i_z, $$
 $$ u \in [0, 2\pi], \quad v \in [-\pi/2, \pi/2]. $$
@@ -294,7 +294,7 @@ $$ t \in [0, 2\pi]. $$
 
 The pole edges are points, but the planar curves in the parameter space of the spherical surface have non-zero length at the poles and are line segments.
 
-The loop of the sphere face is described by the list of curves the edges are based on, with signs of the flags corresponding to these edges: \(+e_1, +e, -e_2,\) and \(-e.\) Juncture \(e\) enters the list of the edges of the loop twice—once with positive flag, and the second time with negative flag.
+The loop of the sphere face is described by the list of curves the edges are based on, with signs of the flags corresponding to these edges: $+e_1, +e, -e_2,$ and $-e.$ Juncture $e$ enters the list of the edges of the loop twice—once with positive flag, and the second time with negative flag.
 
 A sphere is shown in Fig. 4.6.5. The thin line shows the juncture of the spherical face, and the line with an arrowhead shows the motion near the loop of this face.
 
@@ -302,7 +302,7 @@ Fig. 4.6.5.
 
 Fig. 4.6.6.
 
-A torus has one face, two edges, and one vertex. Let us place the origin of a local coordinate system \(p\) of a torus-shaped solid at its center and direct the basis vector \(i_z\) along the axis of symmetry. Let the large radius of the torus be \(R,\) the small radius of the torus be \(r,\) and \(R>r.\) The face of the torus is based on the surface
+A torus has one face, two edges, and one vertex. Let us place the origin of a local coordinate system $p$ of a torus-shaped solid at its center and direct the basis vector $i_z$ along the axis of symmetry. Let the large radius of the torus be $R,$ the small radius of the torus be $r,$ and $R>r.$ The face of the torus is based on the surface
 
 $$ r(u,v) = p + (R+r\cos v)(\cos u i_x + \sin u i_y) + r \sin v i_z, $$
 $$ u \in [0, 2\pi], \quad v \in [-\pi, \pi], $$
@@ -312,33 +312,33 @@ and the two edges are based on the curves
 $$ e_1(t) = \begin{cases} r(t,-\pi) & t \in [0, 2\pi], \\ r(t,\pi) & t \in [-\pi, \pi]. \end{cases} $$
 $$ e_2(t) = \begin{cases} r(0,t) & t \in [0, 2\pi], \\ r(2\pi,t) & t \in [-\pi, \pi]. \end{cases} $$
 
-The vertex is located at the intersection of edges \(p+(R-r)i_x.\) The surface of the torus is cyclic closed with respect to both parameters; therefore both edges of the shell of this
-solid are closed and are junctures. The normal to the surface and the edges of the torus have the same direction. The face has one loop. The loop of the face is described by the list of curves the edges are based on with signs of the flags corresponding to these edges: \(+e_1, +e_2, -e_1,\) and \(-e_2\). The torus, its junctures, and the motion near the loop of the face are shown in Fig. 4.6.6.
+The vertex is located at the intersection of edges $p+(R-r)i_x.$ The surface of the torus is cyclic closed with respect to both parameters; therefore both edges of the shell of this
+solid are closed and are junctures. The normal to the surface and the edges of the torus have the same direction. The face has one loop. The loop of the face is described by the list of curves the edges are based on with signs of the flags corresponding to these edges: $+e_1, +e_2, -e_1,$ and $-e_2$. The torus, its junctures, and the motion near the loop of the face are shown in Fig. 4.6.6.
 
 Shells of all other solids are constructed according to the general rules and have the same structure as the shells of the elementary solids. Methods of constructing complex solid shells are considered in the next chapter.
 
 ### 4.7. Solids Constructed by Curve Translation
 
-Let us construct a solid by translating a composite curve along a given path. Let the translation path be described by curve \(g(v)\), which we call the **guide curve**. A curve moving along a translation path is called a **generator curve**. The guide curve and generator curve should not have self-intersections. If the generator curve is not closed, then in general a solid cannot be constructed on the basis of this curve. Usually, a closed composite curve is created from an open curve by “giving it a thickness,” using offset curves. In general, a generator curve is a closed composite curve. If the generator is a planar curve, then we can construct a solid with flat ends.
+Let us construct a solid by translating a composite curve along a given path. Let the translation path be described by curve $g(v)$, which we call the **guide curve**. A curve moving along a translation path is called a **generator curve**. The guide curve and generator curve should not have self-intersections. If the generator curve is not closed, then in general a solid cannot be constructed on the basis of this curve. Usually, a closed composite curve is created from an open curve by “giving it a thickness,” using offset curves. In general, a generator curve is a closed composite curve. If the generator is a planar curve, then we can construct a solid with flat ends.
 
-Let the generator curve \(c(u)\) lie on the plane
+Let the generator curve $c(u)$ lie on the plane
 
 $$
 r(x,y) = p + x i_x + y i_y,
 $$
 
-and let it be a closed composite curve composed of \(k\) segments joined to each other
+and let it be a closed composite curve composed of $k$ segments joined to each other
 
 $$
 c_i(u) = p + x_i(u) i_x + y_i(u) i_y, \quad u \in [u_{\text{min}}, u_{\text{max}}], \quad i = 1, 2, \ldots, k.
 $$
 
-Let the closed generator curve be traversed in the counterclockwise direction when viewed towards the vector of the derivative of the guide curve at its start point. If the guide curve \(g(v)\) is not closed, then the shell of the solid has end faces. The end faces of swept solids are planes whose domain \(\Omega\) is described by the curves \(x=x_i(u), y=y_i(u)\). If the guide curve is closed, then the shell of the solid does not have end faces. The side faces of the shell of the solid are based on the surfaces generated by moving the generator curve segments \(c_i(u)\) along the guide curve \(g(v)\). The number of side faces is equal to the number of segments of the generator curve. Depending on the type of the translation path \(g(v)\), one can construct several types of solids.
+Let the closed generator curve be traversed in the counterclockwise direction when viewed towards the vector of the derivative of the guide curve at its start point. If the guide curve $g(v)$ is not closed, then the shell of the solid has end faces. The end faces of swept solids are planes whose domain $\Omega$ is described by the curves $x=x_i(u), y=y_i(u)$. If the guide curve is closed, then the shell of the solid does not have end faces. The side faces of the shell of the solid are based on the surfaces generated by moving the generator curve segments $c_i(u)$ along the guide curve $g(v)$. The number of side faces is equal to the number of segments of the generator curve. Depending on the type of the translation path $g(v)$, one can construct several types of solids.
 
-An **evolution solid** is obtained by plane-parallel translation of the generator curve along a monotonic guide curve. The side faces of an evolution solid are described by surfaces (2.3.1), where the generator curves are the curves (4.7.2). The first end face of the solid is described by a plane (4.7.1) with domain \(\Omega\). The second end face is based on a copy of the plane of the first end face shifted by the vector \(d=g(v_{\text{max}})-g(v_{\text{min}})\). The evolution solid does not intersect itself, if the dot product of the normal to the plane
+An **evolution solid** is obtained by plane-parallel translation of the generator curve along a monotonic guide curve. The side faces of an evolution solid are described by surfaces (2.3.1), where the generator curves are the curves (4.7.2). The first end face of the solid is described by a plane (4.7.1) with domain $\Omega$. The second end face is based on a copy of the plane of the first end face shifted by the vector $d=g(v_{\text{max}})-g(v_{\text{min}})$. The evolution solid does not intersect itself, if the dot product of the normal to the plane
 (4.7.1) and the derivative of the guide curve does not change sign. An evolution solid is shown in Fig. 4.7.1.
 
-An extrusion solid is obtained when the guide curve is a line segment \( g(v) = (1-v)p_1 + vp_2, \ 0 \leq v \leq 1 \). The first end face of the extrusion solid is described by plane (4.7.1) with domain \( \Omega \). The second end face is based on a copy of the plane of the first end face shifted by the vector \( d = p_2 - p_1 \). Suppose that a closed generator curve is traversed in counterclockwise, when viewed toward the vector \( d \). The side faces of the extrusion solid are described by surfaces (2.3.2), where the generator curves are the curves (4.7.2).
+An extrusion solid is obtained when the guide curve is a line segment $g(v) = (1-v)p_1 + vp_2, \ 0 \leq v \leq 1$. The first end face of the extrusion solid is described by plane (4.7.1) with domain $\Omega$. The second end face is based on a copy of the plane of the first end face shifted by the vector $d = p_2 - p_1$. Suppose that a closed generator curve is traversed in counterclockwise, when viewed toward the vector $d$. The side faces of the extrusion solid are described by surfaces (2.3.2), where the generator curves are the curves (4.7.2).
 
 ![Fig. 4.7.1.](image1)
 
@@ -346,15 +346,15 @@ An extrusion solid is obtained when the guide curve is a line segment \( g(v) = 
 
 An extrusion solid constructed on a closed composite curve is shown in Fig. 4.7.2.
 
-In some cases it is required to construct an extrusion solid with sloping side faces. In this case we construct an offset curve for the planar generator curve and move it by the vector \( d \). If the generation curve is a composite curve, then the offset curve should also be composite and must contain the same number of segments. In general, the side faces of the extrusion solid with slope are ruled surfaces, each of which is constructed on a segment (4.7.2), and the corresponding segment of the offset curve is displaced by vector \( d \). The tangent of the slope angle of the side faces is equal to the ratio of the offset to the length of the extrusion.
+In some cases it is required to construct an extrusion solid with sloping side faces. In this case we construct an offset curve for the planar generator curve and move it by the vector $d$. If the generation curve is a composite curve, then the offset curve should also be composite and must contain the same number of segments. In general, the side faces of the extrusion solid with slope are ruled surfaces, each of which is constructed on a segment (4.7.2), and the corresponding segment of the offset curve is displaced by vector $d$. The tangent of the slope angle of the side faces is equal to the ratio of the offset to the length of the extrusion.
 
-A revolution solid is obtained when the guide curve is a circle or arc. Let the axis of rotation pass through point \( p \), and its direction be specified by the unit vector \( i = (i_1, i_2, i_3) \). The side faces of the solid of revolution are described by surfaces (2.3.3), where the generator curves are the curves (4.7.2).
+A revolution solid is obtained when the guide curve is a circle or arc. Let the axis of rotation pass through point $p$, and its direction be specified by the unit vector $i = (i_1, i_2, i_3)$. The side faces of the solid of revolution are described by surfaces (2.3.3), where the generator curves are the curves (4.7.2).
 
 ![Fig. 4.7.3.](image3)
 
 ![Fig. 4.7.4.](image4)
 
-The rotation axis should not intersect the side faces. For the solid not to be turned inside out, the rotation axis direction and traversal of the generator must be consistent. Let us specify the positive direction of the rotation axis for the closed generator curve. Suppose we are on the side of the plane (4.7.1) where motion along the generation curve appears to be counterclockwise. Accept the direction of vector \( i \) when viewing along which the generator curve is on the left as the positive direction of the rotation.
+The rotation axis should not intersect the side faces. For the solid not to be turned inside out, the rotation axis direction and traversal of the generator must be consistent. Let us specify the positive direction of the rotation axis for the closed generator curve. Suppose we are on the side of the plane (4.7.1) where motion along the generation curve appears to be counterclockwise. Accept the direction of vector $i$ when viewing along which the generator curve is on the left as the positive direction of the rotation.
 axis. If the rotation angle is $2\pi$, then the shell of the solid has torus topology; otherwise it has prism topology. In the former case the shell does not have end faces. A solid of revolution with prism topology is shown in Fig. 4.7.3.
 
 Fig. 4.7.4 shows a solid of revolution that can be constructed on an open composite planar curve. Perpendiculars are dropped from the endpoints of the generator curve to the rotation axis. The perpendiculars are then used to construct the corresponding faces. Unlike the previous example, the solid shown in Fig. 4.7.4. is osculating with the rotation axis. These solids are called spheroids.
@@ -389,40 +389,40 @@ If the guide curve is not closed, then the solid has two end faces. The loop of 
 Let us construct a solid on planar sections specified by a set of curves $r_j(u)$, $j=0,1,\ldots,n$. If the curves $r_j(u)$ are composite, then they must consist of the same number of segments; therefore in each side face of the shell, one segment (4.7.2) from each curve is used. Curves that the side faces are constructed on must have the same parametric length. If all the curves of the set are closed, then it is possible to construct a lofted solid on them. The lofted solid may have two end faces constructed on the boundary curves. The end faces of the solid are planes bounded by these curves. The side faces of the shell may be Lagrange surfaces (2.4.2) or lofted surfaces (2.4.3).
 
 Let us orient the curves of the set so that they are traversed counterclockwise when the curve $c_j(u)$ is viewed from the center of gravity of curve $r_{j+1}(u)$. Assign the value of the
-second parameter \( v = v_j, j=0,1,...,n \) of the side face surface to each curve \( r_j(u) \). For the surfaces passing through the curves of the set with the parameter \( v_i \), the surface must coincide with curve \( r_j(u) \). The second parameter of surface \( v \) between curves \( r_j(u) \) and \( r_m(u) \) varies from \( v_j \) to \( v_m \). Note that the shape of the surface depends on parameter values \( v_j, j=0,1,...,n \). We get the correct surface when the differences between parameter values \( v_j - v_{j-1} \) are proportional to the average distance \( |r_j(u) - r_{j-1}(u)| \) between the curves. Fig. 4.8.1 shows the lofted surface constructed on curves \( r_j(u), j=0,1,...,n \). A solid constructed on plane sections is shown in Fig. 4.8.2.
+second parameter $v = v_j, j=0,1,...,n$ of the side face surface to each curve $r_j(u)$. For the surfaces passing through the curves of the set with the parameter $v_i$, the surface must coincide with curve $r_j(u)$. The second parameter of surface $v$ between curves $r_j(u)$ and $r_m(u)$ varies from $v_j$ to $v_m$. Note that the shape of the surface depends on parameter values $v_j, j=0,1,...,n$. We get the correct surface when the differences between parameter values $v_j - v_{j-1}$ are proportional to the average distance $|r_j(u) - r_{j-1}(u)|$ between the curves. Fig. 4.8.1 shows the lofted surface constructed on curves $r_j(u), j=0,1,...,n$. A solid constructed on plane sections is shown in Fig. 4.8.2.
 
 Depending on the location of the plane sections, the solid may have prism or torus topology. A solid with prism topology has two end faces. The loops of solid faces constructed on sections are constructed similarly to loops of faces of swept solids.
 
-If, besides the plane sections, the guide curve is given, then we can construct a lofted solid with a guide curve. The side faces of such a solid are based on surfaces (2.4.9). Fig. 4.8.3 shows a surface (2.4.9) constructed on curves \( r_0(u) \) and \( r_1(u) \) and a guide curve \( g(v) \). A solid constructed on plane sections with a guide curve is shown in Fig. 4.8.4.
+If, besides the plane sections, the guide curve is given, then we can construct a lofted solid with a guide curve. The side faces of such a solid are based on surfaces (2.4.9). Fig. 4.8.3 shows a surface (2.4.9) constructed on curves $r_0(u)$ and $r_1(u)$ and a guide curve $g(v)$. A solid constructed on plane sections with a guide curve is shown in Fig. 4.8.4.
 
 All other parameters of a solid constructed on plane sections with a guide curve are similar to the parameters of a solid constructed on plane sections without a guide curve.
 4.9. Solids Constructed from Surfaces
 
-An arbitrary surface can be a basis for a solid in the form of a finite thickness sheet. Suppose we are given a surface \( b(u,v) \), \( u,v \in \Omega \). Select the thickness of a sheet \( h \) and construct an offset surface corresponding to it:
+An arbitrary surface can be a basis for a solid in the form of a finite thickness sheet. Suppose we are given a surface $b(u,v)$, $u,v \in \Omega$. Select the thickness of a sheet $h$ and construct an offset surface corresponding to it:
 
 $$
 r(u,v) = b(u,v) + h m(u,v),
 $$
 
-where \( m(u,v) \) is the normal to the surface \( b(u,v) \). Construct two main faces of the sheet solid on surfaces \( b(u,v) \) and \( r(u,v) \). The faces joining these main faces are called side faces. If domain \( \Omega \) of the parameters of surface \( b(u,v) \) has a rectangular shape, then the sheet solid has four side faces. In general, a sheet solid has as many side faces as the number of curves in the composite curve describing the domain of the surface parameters \( b(u,v) \). Let the domain \( \Omega \) be bounded by a composite curve containing \( k \) segments:
+where $m(u,v)$ is the normal to the surface $b(u,v)$. Construct two main faces of the sheet solid on surfaces $b(u,v)$ and $r(u,v)$. The faces joining these main faces are called side faces. If domain $\Omega$ of the parameters of surface $b(u,v)$ has a rectangular shape, then the sheet solid has four side faces. In general, a sheet solid has as many side faces as the number of curves in the composite curve describing the domain of the surface parameters $b(u,v)$. Let the domain $\Omega$ be bounded by a composite curve containing $k$ segments:
 
 $$
 c_i[u_i(t), v_i(t)]^T,
 $$
 
-\( t \in [t_{\text{min}}, t_{\text{max}}] \), \( i = 1, 2, \ldots, k \).
+$t \in [t_{\text{min}}, t_{\text{max}}]$, $i = 1, 2, \ldots, k$.
 
-Each segment corresponds to two three-dimensional curves: \( b(u_i(t), v_i(t)) \) and \( r(u_i(t), v_i(t)) \), on which we can construct a side surface. In general, the \( i \)-th side face is based on the ruled surface
+Each segment corresponds to two three-dimensional curves: $b(u_i(t), v_i(t))$ and $r(u_i(t), v_i(t))$, on which we can construct a side surface. In general, the $i$-th side face is based on the ruled surface
 
 $$
 s_i(t,w) = (1-w)b(u_i(t), v_i(t)) + wr(u_i(t), v_i(t)),
 $$
 
-\( t \in [t_{\text{min}}, t_{\text{max}}] \), \( w \in [0, 1] \).
+$t \in [t_{\text{min}}, t_{\text{max}}]$, $w \in [0, 1]$.
 
-When \( h > 0 \), the directions of normals to the side faces coincide with the directions of normals to their surfaces. The direction of a normal to a face, based on an offset surface at \( h > 0 \), coincides with the direction of the surface normal. The direction of a normal to the face based on surface \( b(u,v) \) at \( h > 0 \) is opposite to that of the surface normal. When \( h < 0 \), the directions of normals to the faces change to the opposite direction.
+When $h > 0$, the directions of normals to the side faces coincide with the directions of normals to their surfaces. The direction of a normal to a face, based on an offset surface at $h > 0$, coincides with the direction of the surface normal. The direction of a normal to the face based on surface $b(u,v)$ at $h > 0$ is opposite to that of the surface normal. When $h < 0$, the directions of normals to the faces change to the opposite direction.
 
-Let \( h > 0 \). Then the loop of the first main face consists of \( k \) edges based on the curves
+Let $h > 0$. Then the loop of the first main face consists of $k$ edges based on the curves
 
 $$
 e_{i_1}(t) = \begin{cases} 
@@ -431,24 +431,24 @@ s_i(t,0) & i = k, k-1, \ldots, 1
 \end{cases}
 $$
 
-with negative flag. The normals to the first main face and to the surface \( b(u,v) \) are oppositely directed. The loop of the second main face consists of \( k \) edges based on the curves
+with negative flag. The normals to the first main face and to the surface $b(u,v)$ are oppositely directed. The loop of the second main face consists of $k$ edges based on the curves
 $$ e_{2i}(t) = \begin{cases} r(u_i(t), v_i(t)) & t \in [t_{\text{min}}, t_{\text{max}}], \\ s_i(t, 1) & i = 1, 2, \ldots, k \end{cases} $$
 
-with positive flag. The normals to the second main face and to the surface \( r(u,v) \) coincide. To describe the loop of the side face of the solid based on surface \( s_i(t,w) \), construct the curves of intersection of this surface with the adjacent side surfaces:
+with positive flag. The normals to the second main face and to the surface $r(u,v)$ coincide. To describe the loop of the side face of the solid based on surface $s_i(t,w)$, construct the curves of intersection of this surface with the adjacent side surfaces:
 
 $$ e_{i-1}(w) = \begin{cases} s_{i-1}(t_{i-1\text{max}}, w) & , \\ s_i(t_{i\text{min}}, w) & , \end{cases} \quad e_i(w) = \begin{cases} s_i(t_{i\text{max}}, w) & , \\ s_{i+1}(t_{i+1\text{min}}, w) & , \end{cases} $$
 
-\( w \in [0, 1] \).
+$w \in [0, 1]$.
 
-Let the direction of each edge coincide with the direction of the curve it is based on. Each side edge of the solid has one loop described by the list of edges with signs of the flags corresponding to these edges: \( +e_1, +e_i, -e_2, \) and \( -e_{i-1} \). The normals to the side face and its surface coincide.
+Let the direction of each edge coincide with the direction of the curve it is based on. Each side edge of the solid has one loop described by the list of edges with signs of the flags corresponding to these edges: $+e_1, +e_i, -e_2,$ and $-e_{i-1}$. The normals to the side face and its surface coincide.
 
-If surface \( b(u,v) \) is closed with respect to one of the parameters, then the sheet solid has the shape of a pipe and topology of a torus. If the surface is closed in both parametric directions, then we obtain a solid with an internal void. Such a solid with \( h > 0 \) has its outer shell based on surface \( r(u,v) \) and its inner shell based on surface \( b(u,v) \); when \( h < 0 \), the outer shell is based on surface \( b(u,v) \), and the inner shell is based on surface \( r(u,v) \). Fig. 4.9.1 shows a spline surface with the boundary in the form of a closed composite curve. A solid with the shape of a sheet constructed on the abovementioned surface is shown in Fig. 4.9.2.
+If surface $b(u,v)$ is closed with respect to one of the parameters, then the sheet solid has the shape of a pipe and topology of a torus. If the surface is closed in both parametric directions, then we obtain a solid with an internal void. Such a solid with $h > 0$ has its outer shell based on surface $r(u,v)$ and its inner shell based on surface $b(u,v)$; when $h < 0$, the outer shell is based on surface $b(u,v)$, and the inner shell is based on surface $r(u,v)$. Fig. 4.9.1 shows a spline surface with the boundary in the form of a closed composite curve. A solid with the shape of a sheet constructed on the abovementioned surface is shown in Fig. 4.9.2.
 
 ![Fig. 4.9.1](image)
 
 ![Fig. 4.9.2](image)
 
-Using a solid in the form of a sheet it is possible to model the details of car bodies and airframes. To construct the solid it is sufficient to know the basic surface \( b(u,v) \) and the thickness of the solid \( h \).
+Using a solid in the form of a sheet it is possible to model the details of car bodies and airframes. To construct the solid it is sufficient to know the basic surface $b(u,v)$ and the thickness of the solid $h$.
 
 **Exercises**
 

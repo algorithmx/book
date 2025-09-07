@@ -37,11 +37,11 @@ A wire-frame model can be obtained from a geometric model as a collection of sol
 The problem of constructing vector images is reduced to the problem of determining the visible parts of the curves of a wire-frame model. In Fig. 7.3.1 we see the image of a model with removed hidden lines, and lines of smooth transitions between the faces are thinner than the lines of the edges and the silhouette lines.
 
 Fig. 7.3.1.
-Using silhouette lines we can partition the surface of the imaged object into visible and conditionally invisible areas. Let the vector \( \mathbf{i} \) be directed from a vantage point to a given point of the object. Then those areas of the surface are invisible for which the dot product of the normal to the surface and the vector \( \mathbf{i} \) is positive. Areas of the surface for which the dot product of the normal to the surface and the vector \( \mathbf{i} \) is negative are visible, provided that they are not obstructed by other visible areas of the surface closer to the vantage point. Similarly, we can judge the visibility of the model elements. If the normals to the faces joining at an edge are directed away from the vantage point in a certain region, then this part of the edge is invisible. Otherwise this part of the edge can be seen from the vantage point, or may be covered by some face. Thus, for some model elements, we can immediately determine their invisibility from the vantage point; but to determine the visibility of other elements of the model, we need to perform additional manipulations.
+Using silhouette lines we can partition the surface of the imaged object into visible and conditionally invisible areas. Let the vector $\mathbf{i}$ be directed from a vantage point to a given point of the object. Then those areas of the surface are invisible for which the dot product of the normal to the surface and the vector $\mathbf{i}$ is positive. Areas of the surface for which the dot product of the normal to the surface and the vector $\mathbf{i}$ is negative are visible, provided that they are not obstructed by other visible areas of the surface closer to the vantage point. Similarly, we can judge the visibility of the model elements. If the normals to the faces joining at an edge are directed away from the vantage point in a certain region, then this part of the edge is invisible. Otherwise this part of the edge can be seen from the vantage point, or may be covered by some face. Thus, for some model elements, we can immediately determine their invisibility from the vantage point; but to determine the visibility of other elements of the model, we need to perform additional manipulations.
 
-Let us consider the algorithm for determining the visibility of the model elements. Construct a wire-frame model of the object consisting of outline lines, and lines the edges of faces are based on. Let the wire-frame model consist of three-dimensional curves \( c_i(t_i), i=1,2,...,n \). The corresponding parallel or central projection onto a given plane can be constructed for each three-dimensional curve. Next, define the points of the curves at which their visibility may change. To do this, we find all the points at which the projections of three-dimensional curves \( c_i(t_i), i=1,2,...,n \) intersect. Use these points to divide the curves into segments. Now every segment of the curve between the dividing points is either completely visible or completely invisible. Now we have to find the visible parts of the curves, construct the projections for them, and delete duplicate projections.
+Let us consider the algorithm for determining the visibility of the model elements. Construct a wire-frame model of the object consisting of outline lines, and lines the edges of faces are based on. Let the wire-frame model consist of three-dimensional curves $c_i(t_i), i=1,2,...,n$. The corresponding parallel or central projection onto a given plane can be constructed for each three-dimensional curve. Next, define the points of the curves at which their visibility may change. To do this, we find all the points at which the projections of three-dimensional curves $c_i(t_i), i=1,2,...,n$ intersect. Use these points to divide the curves into segments. Now every segment of the curve between the dividing points is either completely visible or completely invisible. Now we have to find the visible parts of the curves, construct the projections for them, and delete duplicate projections.
 
-To determine the visibility of segments of curves \( c_i(t_i), i=1,2,...,n \) we choose an arbitrary point \( r \) inside every segment. Then, we construct a straight line \( l(t)=r+t\mathbf{i} \), passing through the point \( r \) and the vantage point, and directed away from the vantage point. For a parallel projection, vector \( \mathbf{i} \) is parallel to the normal to the projection plane; for a central projection, vector \( \mathbf{i} \) is proportional to the vector \( r-w \), where \( w \) is the vantage point. Let us find the point of intersection of this line with surfaces of the geometric model. If the values of parameter \( t \) of the curve are non-negative for all the points of intersection, then the considered segment of the curve is visible. If among the values of parameter \( t \) for the points of intersection there is at least one that is negative, then the segment of the curve is invisible, as it is covered by one of the model surfaces located closer to the observer than the point \( r \). Continue to carry out this procedure with segments of all the curves whose visibility from the vantage point is not immediately evident.
+To determine the visibility of segments of curves $c_i(t_i), i=1,2,...,n$ we choose an arbitrary point $r$ inside every segment. Then, we construct a straight line $l(t)=r+t\mathbf{i}$, passing through the point $r$ and the vantage point, and directed away from the vantage point. For a parallel projection, vector $\mathbf{i}$ is parallel to the normal to the projection plane; for a central projection, vector $\mathbf{i}$ is proportional to the vector $r-w$, where $w$ is the vantage point. Let us find the point of intersection of this line with surfaces of the geometric model. If the values of parameter $t$ of the curve are non-negative for all the points of intersection, then the considered segment of the curve is visible. If among the values of parameter $t$ for the points of intersection there is at least one that is negative, then the segment of the curve is invisible, as it is covered by one of the model surfaces located closer to the observer than the point $r$. Continue to carry out this procedure with segments of all the curves whose visibility from the vantage point is not immediately evident.
 
 If necessary, construct planar projections of the visible segments of the curves of the wire-frame model.
 
@@ -50,19 +50,19 @@ Polylines are used to construct a vector image of a curve. If we construct a set
 A sequence of points that the polyline approximating the curve passes through is called a polygon of the curve.
 A projection of a three-dimensional polygon onto a plane is also a polygon. Therefore, curves and surfaces on a computer screen are usually accompanied by polygons.
 
-The distance between the points of a polygon must be such that the polygon appears smooth. We can use the maximum distance between the curve and its approximating polygon as a control parameter. Let the curve \( c(t) \) be given, and suppose we are at a point on the curve \( t_0 \), which is a point of a polygon. It is required to find the parameter \( t_1 \) of the next point of the polygon, such that the deviation of the curve from its polygon does not exceed the value \( \delta \). Suppose that the curve in the vicinity of the point is close to a circle osculating at this point (see Fig. 7.3.2). The radius \( \rho \) of the osculating circle is equal to the radius of curvature of the curve and is determined by the formula
+The distance between the points of a polygon must be such that the polygon appears smooth. We can use the maximum distance between the curve and its approximating polygon as a control parameter. Let the curve $c(t)$ be given, and suppose we are at a point on the curve $t_0$, which is a point of a polygon. It is required to find the parameter $t_1$ of the next point of the polygon, such that the deviation of the curve from its polygon does not exceed the value $\delta$. Suppose that the curve in the vicinity of the point is close to a circle osculating at this point (see Fig. 7.3.2). The radius $\rho$ of the osculating circle is equal to the radius of curvature of the curve and is determined by the formula
 
 $$\rho = \frac{|c'|^3}{|c' \times c''|}.$$
 
 ![Fig. 7.3.2.](image)
 
-By the Pythagorean theorem \( \left( \frac{h}{2} \right)^2 = \rho^2 - (\rho - \delta)^2 \), the square of half of the length of the chord is \( \left( \frac{h}{2} \right)^2 \approx 2\rho\delta^2 - \delta^2 \). The whole length of the chord is equal to
+By the Pythagorean theorem $\left( \frac{h}{2} \right)^2 = \rho^2 - (\rho - \delta)^2$, the square of half of the length of the chord is $\left( \frac{h}{2} \right)^2 \approx 2\rho\delta^2 - \delta^2$. The whole length of the chord is equal to
 
 $$h \approx 2\sqrt{\delta(2\rho - \delta)}.$$
 
-If the curve is close to the arc of the osculating circle, and the arc angle is small enough, then we can assume that the chord length is approximately equal to the length of the arc of the curve, and the increment of the parameter \( \Delta t \) on the length of the arc of the curve can be taken to be
+If the curve is close to the arc of the osculating circle, and the arc angle is small enough, then we can assume that the chord length is approximately equal to the length of the arc of the curve, and the increment of the parameter $\Delta t$ on the length of the arc of the curve can be taken to be
 
-$$\Delta t \approx \frac{h}{|c'|} = 2\sqrt{\delta(2\rho - \delta)} \frac{|c'|}{|c' \times c''|} = 2\sqrt{\delta \left( \frac{2|c'|}{|c' \times c''|} - \frac{\delta}{c' \cdot c'} \right)}.$$  
+$$\Delta t \approx \frac{h}{|c'|} = 2\sqrt{\delta(2\rho - \delta)} \frac{|c'|}{|c' \times c''|} = 2\sqrt{\delta \left( \frac{2|c'|}{|c' \times c''|} - \frac{\delta}{c' \cdot c'} \right)}.$$
 
 (7.3.1)
 The change of parameter $\Delta t$ is called the parametric step. Thus, the parameter of the next point of the polygon can be assumed to be $t_1 = t_0 + \Delta t$. At an abrupt change in the direction or length of the second derivative at the point $t_1$, compared to the previous point, formula (7.3.1) yields an error; i.e., the deflection can be significantly larger than $\delta$. In this case, the step should be refined by determining the average radius of curvature of the curve in the considered segment.
@@ -92,7 +92,7 @@ $$ \Delta v = 2 \sqrt{\frac{g_{22} - \delta}{b_{22}}} $$
 
 (7.3.4)
 
-The changes of parameters \( \Delta u \) and \( \Delta v \) are called parametric steps. For an abrupt change in direction or length of the second derivatives of the radius vector of a surface, formulas (7.3.3) and (7.3.4) give an error, and the steps should be refined by determining the average surface curvature at the considered segment.
+The changes of parameters $\Delta u$ and $\Delta v$ are called parametric steps. For an abrupt change in direction or length of the second derivatives of the radius vector of a surface, formulas (7.3.3) and (7.3.4) give an error, and the steps should be refined by determining the average surface curvature at the considered segment.
 
 For convenience, polygons belonging to the same object are combined in a polygon mesh. A set of polygons of a geometric model is called a mesh of polygons. The mesh of polygons of a curve consists of one polygon. The mesh of polygons of a surface consists of polygons of its borders, and possibly of several polygons of its surface curves. The mesh of polygons of a solid consists of polygons of the surface of its faces and polygons of its edges.
 
@@ -151,32 +151,35 @@ For a transparent object, not only reflected light arrives at the vantage point 
 
 $$ I = I_0 e^{-\mu l}, $$
 
-where \( I_0 \) is the intensity of the light at the entrance to the absorbing media, \( l \) is the distance traveled, and \( \mu \) is the light absorption coefficient of the media.
+where $I_0$ is the intensity of the light at the entrance to the absorbing media, $l$ is the distance traveled, and $\mu$ is the light absorption coefficient of the media.
 
 The intensity of light arriving at the vantage point from a non-radiating opaque object in our model is determined by the sum of three components:
 
-$$ I = k_a I_a + I_p k_s \cos \theta + I_p k_s \cos^n \alpha. $$ (7.4.2)
+$$ I = k_a I_a + I_p k_s \cos \theta + I_p k_s \cos^n \alpha. $$
+(7.4.2)
 
 Shading results obtained from formula (7.4.2) are realistic, but have a significant drawback. When two planar surfaces of the same color are parallel to each other and their projections overlap, the surfaces will be similarly shaded, and their images will merge—regardless of their distance from the vantage point. To eliminate this effect, the intensity of the light emanating from the surface is considered to be dependent on the distance, and we write the formula for calculation of the intensity of the light in the form
 
-$$ I = \frac{k_a I_a}{1 + k_r (r - r_0)} + I_p \left( k_d \cos q + k_s \cos^n \alpha \right), $$ (7.4.3)
+$$ I = \frac{k_a I_a}{1 + k_r (r - r_0)} + I_p \left( k_d \cos q + k_s \cos^n \alpha \right), $$
+(7.4.3)
 
-where \( r \) is the distance from the vantage point to the point on the surface, \( r_0 \) is the distance from the vantage point to the nearest point on the object, and \( k_r \) is the coefficient of influence of the remoteness of the point of the object on the intensity of light incoming from it. When \( k_r = 0 \), we obtain formula (7.4.2). The intensity of light from the nearest point also coincides with (7.4.2). The distance \( r_0 \) is introduced due to the fact that for parallel projection, the vantage point is placed at infinity. For central projections, we can assume that \( r_0 = 0 \); thus when the entire object recedes from the vantage point, we experience a decrease in its brightness.
+where $r$ is the distance from the vantage point to the point on the surface, $r_0$ is the distance from the vantage point to the nearest point on the object, and $k_r$ is the coefficient of influence of the remoteness of the point of the object on the intensity of light incoming from it. When $k_r = 0$, we obtain formula (7.4.2). The intensity of light from the nearest point also coincides with (7.4.2). The distance $r_0$ is introduced due to the fact that for parallel projection, the vantage point is placed at infinity. For central projections, we can assume that $r_0 = 0$; thus when the entire object recedes from the vantage point, we experience a decrease in its brightness.
 
 If the modeled object is transparent, then besides reflected light, transmitted light arrives at the vantage point, and formula (7.4.3) takes the form
 
-$$ I = \frac{k_a I_a}{1 + k_r (r - r_0)} + I_p \left( k_d \cos \theta + k_s \cos^n \alpha \right) + I_t k_t \cos^n \beta, $$ (7.4.4)
+$$ I = \frac{k_a I_a}{1 + k_r (r - r_0)} + I_p \left( k_d \cos \theta + k_s \cos^n \alpha \right) + I_t k_t \cos^n \beta, $$
+(7.4.4)
 
-where \( I_t \) is the intensity of the light penetrating from the other side of the surface.
+where $I_t$ is the intensity of the light penetrating from the other side of the surface.
 
-If there are multiple light sources, each of them contributes to the intensity of the light arriving at the vantage point. For multiple light sources, each of intensity \( I_{pi} \), formula (7.4.3) takes the form
+If there are multiple light sources, each of them contributes to the intensity of the light arriving at the vantage point. For multiple light sources, each of intensity $I_{pi}$, formula (7.4.3) takes the form
 $$ I = \frac{k_d I_a}{1 + k_r (r - r_0)} + \sum_i I_{pi} (k_d \cos q_i + k_s \cos^n \alpha_i). $$
 
 Formula (7.4.4), which calculates the intensity of light coming from a transparent surface, is similarly changed. It takes the form
 
 $$ I = \frac{k_d I_a}{1 + k_r (r - r_0)} + \sum_i I_{pi} (k_d \cos \theta_i + k_s \cos^n \alpha_i) + \sum_j I_{ij} k_t \cos^n \beta_j, $$
 
-where \( I_{ij} \) is the intensity of the \( j \)-th transmitted light ray (penetrating from the other side of the surface).
+where $I_{ij}$ is the intensity of the $j$-th transmitted light ray (penetrating from the other side of the surface).
 
 Light and human perception are complex phenomena that are not fully explored. From experimental studies, it is known that light having a wavelength of a certain part of the spectrum is perceived by the eye as light of a certain color. The perceived color of the light depends on properties of the light source, the viewed surface, and the human visual system. Dependence of the intensity of light perceived by the eye on the human visual system is shown in Fig. 7.4.3.
 
@@ -201,7 +204,7 @@ $$ I_G = \frac{k_{aG}I_a}{1 + k_r(r - r_0)} + I_p(k_{dG}\cos\theta + k_{sG}\cos^
 
 $$ I_B = \frac{k_{aB}I_a}{1 + k_r(r - r_0)} + I_p(k_{dB}\cos\theta + k_{sB}\cos^n\alpha) + I_tk_{tB}\cos^n\beta, \tag{7.4.5}$$
 
-Intensities must be normalized at \( r = r_0 \). By varying the direction of the incident light and the values of the coefficients of diffuse reflection, specular reflection, and transmission for different components of light, we can choose the desired image of an object. If there are several light sources, each of them must be taken into account in formulas (7.4.5) by the corresponding terms.
+Intensities must be normalized at $r = r_0$. By varying the direction of the incident light and the values of the coefficients of diffuse reflection, specular reflection, and transmission for different components of light, we can choose the desired image of an object. If there are several light sources, each of them must be taken into account in formulas (7.4.5) by the corresponding terms.
 
 ### 7.5. Raster Image Construction
 
@@ -229,7 +232,7 @@ The barycentric coordinates are defined by the system of equations
 $$ax_a + bx_b + cx_c = x,$$
 $$ay_a + by_b + cy_c = y,$$
 $$a + b + c = 1,$$
-where \( x_a \) and \( y_a \) are the coordinates of the projection of point \( p_a \); \( x_b \) and \( y_b \) are the coordinates of the projection of point \( p_b \); \( x_c \) and \( y_c \) are the coordinates of the projection of point \( p_c \); and \( x \) and \( y \) are the coordinates of the projection of point \( p \) onto some plane (say, the image plane). In general, vector \( m(a,b,c) \) does not have unit length, and therefore should be normalized.
+where $x_a$ and $y_a$ are the coordinates of the projection of point $p_a$; $x_b$ and $y_b$ are the coordinates of the projection of point $p_b$; $x_c$ and $y_c$ are the coordinates of the projection of point $p_c$; and $x$ and $y$ are the coordinates of the projection of point $p$ onto some plane (say, the image plane). In general, vector $m(a,b,c)$ does not have unit length, and therefore should be normalized.
 
 In the approximation (7.5.1), the normals gradually change their direction when moving from one triangle to another. That is why the surface looks smooth on the raster images. This approach is used in the Phong method for shading of raster images. If the true direction of the normal to the plate is used within each triangular plate, then the image looks faceted due to Mach bands (see Fig. 7.5.3). The Phong method completely eliminates Mach bands. Let us consider the construction of a raster image of a model in the plane. It is simpler to search for the points of intersection of the line and the triangular plates if the search is performed in the local coordinate system associated with the image plane; thus, let us translate the simplified model to the local coordinate system associated with the image plane.
 
@@ -240,7 +243,7 @@ Let the construction of a raster image of the model be performed on the plane
 $$
 p(x,y) = q + x i_x + y i_y,$$
 
-with its beginning at point \( q=[q_1 q_2 q_3]^T \) and orthogonal unit coordinate axes \( i_x=[x_1 x_2 x_3]^T \) and \( i_y=[y_1 y_2 y_3]^T \). Let us associate plane \( p(x,y) \) with the local coordinate system \( Qxyz \). A line-of-sight vector is directed perpendicular to the plane towards the basis vectors \( i_z=i_x \times i_y=[z_1 z_2 z_3]^T \). The global coordinates \( r_1, r_2, \) and \( r_3 \) of the point of the model and its local coordinates \( x, y, z \) are related by
+with its beginning at point $q=[q_1 q_2 q_3]^T$ and orthogonal unit coordinate axes $i_x=[x_1 x_2 x_3]^T$ and $i_y=[y_1 y_2 y_3]^T$. Let us associate plane $p(x,y)$ with the local coordinate system $Qxyz$. A line-of-sight vector is directed perpendicular to the plane towards the basis vectors $i_z=i_x \times i_y=[z_1 z_2 z_3]^T$. The global coordinates $r_1, r_2,$ and $r_3$ of the point of the model and its local coordinates $x, y, z$ are related by
 
 $$\begin{bmatrix}
 x \\
@@ -256,20 +259,20 @@ z_1 & z_2 & z_3
 r_1 - q_1 \\
 r_2 - q_2 \\
 r_3 - q_3
-\end{bmatrix}.$$  
+\end{bmatrix}.$$
 
 (7.5.2)
 
-The components of the normal in the global coordinate system, \( m_1, m_2, \) and \( m_3 \), and the components of the normal in the image plane coordinate system, \( x_m, y_m, \) and \( z_m \), are related by
+The components of the normal in the global coordinate system, $m_1, m_2,$ and $m_3$, and the components of the normal in the image plane coordinate system, $x_m, y_m,$ and $z_m$, are related by
 Let us translate the simplified model and the light sources into the local coordinate system using (7.5.2) and (7.5.3).
 
 When the vantage point is infinitely distant from the image plane, the lines passing through the image points and the vantage point are parallel to each other, and orthogonal to the image plane.
 
-When constructing a perspective image, we subject the simplified model to an additional transformation: the local coordinates \( x \) and \( y \) of the vertices of the triangular plates are multiplied by the factor
+When constructing a perspective image, we subject the simplified model to an additional transformation: the local coordinates $x$ and $y$ of the vertices of the triangular plates are multiplied by the factor
 
 $$ k_p = \frac{w}{w - z},$$
 
-where \( w \) is the distance from the viewpoint to the image plane, and the normals at the vertices of the triangular plates are rotated by the angle
+where $w$ is the distance from the viewpoint to the image plane, and the normals at the vertices of the triangular plates are rotated by the angle
 
 $$\eta = \arccos \left( -\frac{(r-w) \cdot i_z}{|r-w|} \right) = \arccos \left( -\frac{z-w}{\sqrt{xx + yy + (z-w)(z-w)}} \right)$$
 
@@ -277,13 +280,13 @@ about the vector
 
 $$ v = -\frac{(r-w) \times i_z}{|(r-w) \times i_z|} = \frac{1}{\sqrt{xx + yy}} \begin{pmatrix} -y \\ x \\ 0 \end{pmatrix},$$
 
-where \( w \) is the radius vector of the vantage point; \( r \) is the radius vector of the surface point, at which the normal is computed; and \( i_z \) is the normal to the image plane. The rotation of vector \( m \) is described by
+where $w$ is the radius vector of the vantage point; $r$ is the radius vector of the surface point, at which the normal is computed; and $i_z$ is the normal to the image plane. The rotation of vector $m$ is described by
 
 $$ m_p = (vv^T) \cdot m + \cos \eta (E - vv^T) m + \sin \eta v \times m.$$
 
 Thus, we generate a perspective image in the same manner as we do a parallel image, but for an accordingly distorted simplified model.
 
-To determine the color and brightness of an image point with coordinates \( x \) and \( y \), we find the intersection of the line orthogonal to the image plane passing through the considered point of the image within the simplified model. In the local coordinate system, this search is reduced to determining the triangular plates, in the projection of which lies the point with coordinates \( x \) and \( y \). The latter problem is a two-dimensional one. The points of the image are located within the projection of the plate with vertices \( p_a, p_b, \) and \( p_c \), if its barycentric coordinates \( a, b, \) and \( c, \) calculated relative to the vertices of the plate, take non-negative values. If at least one of the barycentric
+To determine the color and brightness of an image point with coordinates $x$ and $y$, we find the intersection of the line orthogonal to the image plane passing through the considered point of the image within the simplified model. In the local coordinate system, this search is reduced to determining the triangular plates, in the projection of which lies the point with coordinates $x$ and $y$. The latter problem is a two-dimensional one. The points of the image are located within the projection of the plate with vertices $p_a, p_b,$ and $p_c$, if its barycentric coordinates $a, b,$ and $c,$ calculated relative to the vertices of the plate, take non-negative values. If at least one of the barycentric
 coordinates is negative, it means that the triangular plate is not intersected by the passing through the image point and the plane orthogonal to the image. For intersecting triangular plates, we compute the direction of the normal and optical properties of the plates at the intersection points. If the modeled object is not transparent, then we are interested only in one triangular plate, for which the intersection point has the largest coordinate. Using the described method, we find the points of the surface of the model for the considered point of the image, the optical properties of the surface, the direction of the surface normal, direction to each light source, and the intensity and color range of each light source. Using this information, we can determine the color and brightness of the image point.
 
 To create irregularities on the surface of the model we can use random variation of the normal. Fig. 7.5.4 shows a model whose surface normals have been assigned random deviations.
@@ -331,11 +334,11 @@ A greedy triangulation algorithm performs the following manipulations: It calcul
 A triangulation is called a **Delaunay triangulation**, if inside the circle circumscribed about a triangle there are no other vertices of triangles.
 
 Delaunay triangulation does not allow the construction of unnecessarily elongated triangles. Delaunay triangulation is unique if no four vertices lie on a circle. Delaunay triangulations have useful properties and can be calculated quickly, and therefore are the most frequently used triangulations in practice.
-Consider the construction of a Delaunay triangulation for a given set of two-dimensional points. Let us find the nearest point to an arbitrary chosen point. Construct an edge between the points. Try to construct a triangle on this edge, the third vertex of which is to the left or the right from the edge. Suppose it is required to construct a triangle whose side is edge \( AB \) (see Fig. 7.6.1).
+Consider the construction of a Delaunay triangulation for a given set of two-dimensional points. Let us find the nearest point to an arbitrary chosen point. Construct an edge between the points. Try to construct a triangle on this edge, the third vertex of which is to the left or the right from the edge. Suppose it is required to construct a triangle whose side is edge $AB$ (see Fig. 7.6.1).
 
 ![Fig. 7.6.1.](image)
 
-A circle can be drawn through vertices \( A \) and \( B \) and any vertex \( V \) that is not collinear with them. The center of the circle passing through points \( A, B, \) and \( V \) lies on the intersection of the perpendiculars to the midpoints of segments \( AB, VB, \) and \( AV \). Let vertices \( A, B, \) and \( V \) be described by the two-dimensional radius vectors \( a=[x_a\ y_a]^T, b=[x_b\ y_b]^T, \) and \( v=[x_v\ y_v]^T, \) respectively. Let us construct the straight line
+A circle can be drawn through vertices $A$ and $B$ and any vertex $V$ that is not collinear with them. The center of the circle passing through points $A, B,$ and $V$ lies on the intersection of the perpendiculars to the midpoints of segments $AB, VB,$ and $AV$. Let vertices $A, B,$ and $V$ be described by the two-dimensional radius vectors $a=[x_a\ y_a]^T, b=[x_b\ y_b]^T,$ and $v=[x_v\ y_v]^T,$ respectively. Let us construct the straight line
 
 $$\begin{bmatrix}
 x \\
@@ -348,7 +351,7 @@ y_a - y_b \\
 x_b - x_a
 \end{bmatrix},$$
 
-perpendicular to segment \( AB, \) passing through its midpoint, and the straight line
+perpendicular to segment $AB,$ passing through its midpoint, and the straight line
 
 $$\begin{bmatrix}
 x \\
@@ -361,26 +364,26 @@ y_v - y_b \\
 x_b - x_v
 \end{bmatrix},$$
 
-perpendicular to segment \( VB, \) passing through the midpoint of segment \( VB. \) At the point of intersection of the lines, the right-hand sides and left-hand sides of (7.3.1) and (7.3.2) are equal to each other. The intersection of lines (7.6.1) and (7.6.2) is found by solving the system of equations
+perpendicular to segment $VB,$ passing through the midpoint of segment $VB.$ At the point of intersection of the lines, the right-hand sides and left-hand sides of (7.3.1) and (7.3.2) are equal to each other. The intersection of lines (7.6.1) and (7.6.2) is found by solving the system of equations
 
 $$\frac{1}{2}(x_a + x_b) + t(y_a - y_b) = \frac{1}{2}(x_v + x_b) + w(y_v - y_b)$$
 
 $$\frac{1}{2}(y_a + y_b) + t(x_b - x_a) = \frac{1}{2}(y_v + y_b) + w(x_b - x_v)$$
 
-for the parameters of the straight lines \( t \) and \( w, \) defining the position of the point on the straight lines. We are interested in parameter \( t. \) With the help of this parameter and (7.6.1), the position of the center of the circle, passing through vertices \( A, B, \) and \( V, \)
-lying on a perpendicular to the midpoint of \( AB \), can be obtained. Solving the system of equations, this parameter is:
+for the parameters of the straight lines $t$ and $w,$ defining the position of the point on the straight lines. We are interested in parameter $t.$ With the help of this parameter and (7.6.1), the position of the center of the circle, passing through vertices $A, B,$ and $V,$
+lying on a perpendicular to the midpoint of $AB$, can be obtained. Solving the system of equations, this parameter is:
 
-$$t = \frac{1}{2} \left( \frac{(x_v - x_b)(x_v - x_a) + (y_v - y_b)(y_v - y_a)}{(y_v - y_b)(x_b - x_a) - (x_v - x_b)(y_b - y_a)} \right).$$  
+$$t = \frac{1}{2} \left( \frac{(x_v - x_b)(x_v - x_a) + (y_v - y_b)(y_v - y_a)}{(y_v - y_b)(x_b - x_a) - (x_v - x_b)(y_b - y_a)} \right).$$
 
 (7.6.3)
 
-For the center of the circle lying at the middle of segment \( AB \), the value of parameter \( t \) is zero. For the centers of the circles lying to the left of segment \( AB \), parameter \( t > 0 \). For the centers of the circles lying to the right of segment \( AB \), parameter \( t < 0 \). We choose the vertex \( V \) as the third vertex of the Delaunay triangle, the corresponding circle of which does not contain other vertices on the same side relative to the segment \( AB \) that the vertex \( V \) lies on. We call such a vertex nearest. For the vertex that is nearest from the left of segment \( AB \), parameter \( t \) has a minimum value, and for the vertex that is nearest from the right of segment \( AB \), parameter \( t \) has a maximum value.
+For the center of the circle lying at the middle of segment $AB$, the value of parameter $t$ is zero. For the centers of the circles lying to the left of segment $AB$, parameter $t > 0$. For the centers of the circles lying to the right of segment $AB$, parameter $t < 0$. We choose the vertex $V$ as the third vertex of the Delaunay triangle, the corresponding circle of which does not contain other vertices on the same side relative to the segment $AB$ that the vertex $V$ lies on. We call such a vertex nearest. For the vertex that is nearest from the left of segment $AB$, parameter $t$ has a minimum value, and for the vertex that is nearest from the right of segment $AB$, parameter $t$ has a maximum value.
 
 In general, two nearest vertices can be found for an edge: one on the left of the edge, the other on the right of the edge. Thus two adjacent Delaunay triangles can be constructed. It is possible to find only one nearest vertex for an edge with respect to which all the given points lie only on one side. An edge of the latter type is called a boundary edge. The Delaunay triangulation algorithm is executed until two adjacent triangles are constructed for each already existing inner edge, and one triangle is constructed for each boundary edge. As the result, we obtain a triangulation of the inner area of a convex polygon containing all the given vertices (see Fig. 7.6.2).
 
 ![Fig. 7.6.2.](image)
 
-The Delaunay triangulation can be obtained from any other triangulation by rearranging adjacent triangles \( ABC \) and \( ADB \), that do not satisfy the Delaunay condition, into a pair of triangles \( ADC \) and \( BCD \), satisfying the Delaunay condition (see Fig. 7.6.3).
+The Delaunay triangulation can be obtained from any other triangulation by rearranging adjacent triangles $ABC$ and $ADB$, that do not satisfy the Delaunay condition, into a pair of triangles $ADC$ and $BCD$, satisfying the Delaunay condition (see Fig. 7.6.3).
 
 ![Fig. 7.6.3.](image)
 The triangulation problem can be formulated as follows: There is a partially constructed triangulation to which a new vertex is added; it is required to complete the triangulation.
@@ -422,19 +425,19 @@ Construct the polylines that approximate the boundary curves $c_j(t)=s(u_j(t),v_
 Let the boundary curves of the domain of surface parameters $s(u,v)$ be located inside the rectangle defined by the maximum and minimum values of the parameters $u_{\min}, u_{\max}, v_{\min}, v_{\max}$. Let us divide the rectangular domain $u_{\min}\leq u\leq u_{\max}, v_{\min}\leq v\leq v_{\max}$, of the surface into rectangular sub-domains by the planar lines $u_i=\text{const}$, and $v_j=\text{const}$, $i=1,2,\ldots,m$, $j=1,2,\ldots,n$. If the surface is being triangulated in order to construct a raster image, the parametric steps $\Delta u_i=u_{i+1}-u_i$ between the adjacent lines $u_i=\text{const}$ in accordance with formula (7.3.3) are taken as equal to
 $$ \Delta u_i = \min \left( 2 \sqrt{\delta \left( \frac{2}{b_{11}(u_i, v)} - \frac{\delta}{g_{11}(u_i, v)} \right)} \right), \text{ for all } v_{\min} \leq v \leq v_{\max}, $$
 
-and the parametric steps \( \Delta v_j = v_{j+1} - v_j \) between the adjacent lines \( v_j = \text{const} \) in accordance with formula (7.3.4) are taken to equal
+and the parametric steps $\Delta v_j = v_{j+1} - v_j$ between the adjacent lines $v_j = \text{const}$ in accordance with formula (7.3.4) are taken to equal
 
 $$ \Delta v_j = \min \left( 2 \sqrt{\delta \left( \frac{2}{b_{22}(u, v_j)} - \frac{\delta}{g_{22}(u, v_j)} \right)} \right), \text{ for all } u_{\min} \leq u \leq u_{\max}. $$
 
-If the surface is being triangulated to calculate its inertial characteristics, the parametric steps \( \Delta u_i = u_{i+1} - u_i \) between the adjacent lines \( u_i = \text{const} \) in accordance with formula (3.12.3) are taken to equal
+If the surface is being triangulated to calculate its inertial characteristics, the parametric steps $\Delta u_i = u_{i+1} - u_i$ between the adjacent lines $u_i = \text{const}$ in accordance with formula (3.12.3) are taken to equal
 
 $$ \Delta u_i = \min \left( \frac{\Delta \alpha \sqrt{g_{11}(u_i, v)}}{b_{11}(u_i, v)} \right), \text{ for all } v_{\min} \leq v \leq v_{\max}, $$
 
-and the parametric steps \( \Delta v_j = v_{j+1} - v_j \) between the adjacent lines \( v_j = \text{const} \) in accordance with formula (3.12.4) are taken to equal
+and the parametric steps $\Delta v_j = v_{j+1} - v_j$ between the adjacent lines $v_j = \text{const}$ in accordance with formula (3.12.4) are taken to equal
 
 $$ \Delta v_j = \min \left( \frac{\Delta \alpha \sqrt{g_{22}(u, v_j)}}{b_{22}(u, v_j)} \right), \text{ for all } u_{\min} \leq u \leq u_{\max}. $$
 
-Fig. 7.7.3 shows a partitioning of the domain \( u_{\min} \leq u \leq u_{\max}, \ v_{\min} \leq v \leq v_{\max} \) of the considered surface by the described method.
+Fig. 7.7.3 shows a partitioning of the domain $u_{\min} \leq u \leq u_{\max}, \ v_{\min} \leq v \leq v_{\max}$ of the considered surface by the described method.
 
 Define rectangles that are located within the domain of the surface, and discard the other rectangles (see Fig. 7.7.4). Triangulate the part of the surface domain that is not included in the rectangular sub-domains using the Delaunay algorithm for a bounded domain, described above. Fig. 7.7.5 shows a finite partition of the surface into quadrangular and triangular sub-domains.
 Dividing each quadrangles by a diagonal into two triangles, we obtain the triangulation of the surface.
@@ -448,30 +451,30 @@ Triangles of adjacent faces are joined along the sides that coincide in the spac
 
 To calculate the inertial characteristics of a modeled object, we must know the density of the solids that model the individual elements of the object, as well as knowing the object geometry. We assume that the density of each solid is constant throughout its volume. This assumption allows us to reduce the volume integrals over the solid to the integral over the surface of the solid's face. We use the divergence theorem to calculate the volume integrals
 
-$$ \iint_S m \cdot F(r) dS = \iiint_V \nabla \cdot F(r) dV, $$  
+$$ \iint_S m \cdot F(r) dS = \iiint_V \nabla \cdot F(r) dV, $$
 
 (7.9.1)
 
-where \( m \) is the normal to the surface of the solid, \( F(r) \) is a vector function of the points of the solid, \( r \) is the radius vector of a point of the solid, and \( \nabla \) is the Hamiltonian nabla operator. Recall that the normal \( m \) is always directed outward from the solid. The inertial characteristics are calculated in the Cartesian rectangular system whose coordinates are denoted by \( x, y, \) and \( z \).
+where $m$ is the normal to the surface of the solid, $F(r)$ is a vector function of the points of the solid, $r$ is the radius vector of a point of the solid, and $\nabla$ is the Hamiltonian nabla operator. Recall that the normal $m$ is always directed outward from the solid. The inertial characteristics are calculated in the Cartesian rectangular system whose coordinates are denoted by $x, y,$ and $z$.
 
 The surface area of a solid is the sum of areas of its faces, and can be calculated by the formula
 
 $$ S = \sum_i \iint_{\Omega_i} \sqrt{g_{11} g_{22} - g_{12}^2} \, du_i dv_i, $$
 
-where \( u_i \) and \( v_i \) are surface parameters of the \( i \)-th face of the solid; \( g_{11}(u_i, v_i), g_{12}(u_i, v_i), g_{21}(u_i, v_i), \) and \( g_{22}(u_i, v_i) \) is the coefficient of the first fundamental quadratic form of the surface; and \( \Omega_i \) is the parametric domain of the surface of the \( i \)-th face of the solid.
+where $u_i$ and $v_i$ are surface parameters of the $i$-th face of the solid; $g_{11}(u_i, v_i), g_{12}(u_i, v_i), g_{21}(u_i, v_i),$ and $g_{22}(u_i, v_i)$ is the coefficient of the first fundamental quadratic form of the surface; and $\Omega_i$ is the parametric domain of the surface of the $i$-th face of the solid.
 
 In the subsequent formulas for the inertial characteristics of a solid, we omit the summation sign and the face indices, assuming that the summation is being carried out.
 
-Let us assume \( F(r) = r \) in (7.9.1). Then from the divergence theorem we obtain
+Let us assume $F(r) = r$ in (7.9.1). Then from the divergence theorem we obtain
 
 $$ \iint_S m \cdot r dS = \iiint_V \nabla \cdot r dV = 3 \iiint_V dV = 3V, $$
 
-where \( \nabla \cdot r = \left[ \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right] \cdot \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \frac{\partial}{\partial x} x + \frac{\partial}{\partial y} y + \frac{\partial}{\partial z} z = 1 + 1 + 1 = 3. \) The volume is calculated by the formula
+where $\nabla \cdot r = \left[ \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right] \cdot \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \frac{\partial}{\partial x} x + \frac{\partial}{\partial y} y + \frac{\partial}{\partial z} z = 1 + 1 + 1 = 3.$ The volume is calculated by the formula
 
 $$ V = \frac{1}{3} \iint_S m \cdot r dS = \frac{1}{3} \iint_{\Omega} m \cdot r \sqrt{g_{11} g_{22} - g_{12}^2} \, du dv. $$
 The weight of the solid is obtained by multiplying the volume by the density of the solid $\rho$:
 
-$$M = \rho V = \frac{\rho}{3} \iiint_{\Omega} m \cdot r \sqrt{g_{11} g_{22} - g_{12}^2} \, dudv.$$  
+$$M = \rho V = \frac{\rho}{3} \iiint_{\Omega} m \cdot r \sqrt{g_{11} g_{22} - g_{12}^2} \, dudv.$$
 
 The coordinates of the center of mass of the solid—$x_c$, $y_c$, and $z_c$—are determined by dividing the relevant static moments by the solid weight:
 
@@ -506,11 +509,11 @@ The centrifugal moments of inertia of the solid are determined by the formulas:
 
 $$ J_{xy} = J_{yx} = \iiint_V \rho xy dV, \quad J_{yz} = J_{zy} = \iiint_V \rho yz dV, \quad J_{zx} = J_{xz} = \iiint_V \rho xz dV. $$
 
-Moments of inertia are introduced when a rigid solid rotation around a fixed point is considered. When the origin of the coordinate system is superposed with a fixed point, the velocity of a point of the solid is defined by the relation \( v = \omega \times r \), where \( \omega \) is the vector of the instantaneous angular velocity of the solid and \( r \) is the radius vector of a point of the solid. The vector of angular momentum of the solid is
+Moments of inertia are introduced when a rigid solid rotation around a fixed point is considered. When the origin of the coordinate system is superposed with a fixed point, the velocity of a point of the solid is defined by the relation $v = \omega \times r$, where $\omega$ is the vector of the instantaneous angular velocity of the solid and $r$ is the radius vector of a point of the solid. The vector of angular momentum of the solid is
 
 $$ L = \iiint_V (r \times v) \rho dV = \iiint_V (r^2 \omega - (r \cdot \omega) r) \rho dV = J \cdot \omega, $$
 
-where the term \( J \) is called an inertia tensor, and is defined by a matrix whose elements are the axial moments of inertia and centrifugal moments of inertia with the opposite sign:
+where the term $J$ is called an inertia tensor, and is defined by a matrix whose elements are the axial moments of inertia and centrifugal moments of inertia with the opposite sign:
 
 $$ J = \begin{bmatrix}
 J_{xx} & -J_{xy} & -J_{xz} \\
@@ -518,7 +521,7 @@ J_{xx} & -J_{xy} & -J_{xz} \\
 -J_{zx} & -J_{zy} & J_{zz}
 \end{bmatrix}. $$
 
-To calculate the moment of inertia, let us assume \( F(r) = x^2 r \), \( F(r) = y^2 r \), \( F(r) = z^2 r \), \( F(r) = yz r \), \( F(r) = zx r \), and \( F(r) = xy r \) in (7.9.1). Then from the divergence theorem we obtain
+To calculate the moment of inertia, let us assume $F(r) = x^2 r$, $F(r) = y^2 r$, $F(r) = z^2 r$, $F(r) = yz r$, $F(r) = zx r$, and $F(r) = xy r$ in (7.9.1). Then from the divergence theorem we obtain
 
 $$ \iint_S m \cdot (x^2 r) dS = 5 \iiint_V x^2 dV, \quad \iint_S m \cdot (y^2 r) dS = 5 \iiint_V y^2 dV, $$
 $$ \iint_S m \cdot (z^2 r) dS = 5 \iiint_V z^2 dV, $$
@@ -540,20 +543,20 @@ $$ J_{xz} = \frac{\rho}{5} \iint_S xz m \cdot r dS = \frac{\rho}{5} \iint_\Omega
 
 ### 7.10. Calculation of Inertial Characteristics
 
-In numerical integration over a surface, the domain of the face parameters is divided into small rectangular and triangular sub-domains. The calculation accuracy depends on the size of the sub-domains. As the control parameter of the integration domain partition, we use the angular deviation \( \Delta \alpha \). The size of each sub-domain is determined by the following condition: The angular deviation of the surface normal in the sub-domain must not exceed a predetermined value \( \Delta \alpha \). In the manner described above, we replace the two-dimensional parameter domain by a set quadrangles and triangles joining with each other.
+In numerical integration over a surface, the domain of the face parameters is divided into small rectangular and triangular sub-domains. The calculation accuracy depends on the size of the sub-domains. As the control parameter of the integration domain partition, we use the angular deviation $\Delta \alpha$. The size of each sub-domain is determined by the following condition: The angular deviation of the surface normal in the sub-domain must not exceed a predetermined value $\Delta \alpha$. In the manner described above, we replace the two-dimensional parameter domain by a set quadrangles and triangles joining with each other.
 
 Let us compute the definite integral
 
 $$ I = \iint_D f(u,v) dudv \tag{7.10.1}$$
 
-on the convex quadrangle region, using the Gaussian quadrature formulas. Suppose that the vertices of the quadrangle region are located at the points \( p_a = [u_a, v_a]^T \), \( p_b = [u_b, v_b]^T \), \( p_c = [u_c, v_c]^T \), and \( p_d = [u_d, v_d]^T \) on the plane of parameters (see Fig. 7.10.1).
-Change the variables in the double integral (7.10.1). For an arbitrary convex quadrangle region we introduce the new parameters \( x \) and \( y \), related to parameters \( u \) and \( v \) by the relations
+on the convex quadrangle region, using the Gaussian quadrature formulas. Suppose that the vertices of the quadrangle region are located at the points $p_a = [u_a, v_a]^T$, $p_b = [u_b, v_b]^T$, $p_c = [u_c, v_c]^T$, and $p_d = [u_d, v_d]^T$ on the plane of parameters (see Fig. 7.10.1).
+Change the variables in the double integral (7.10.1). For an arbitrary convex quadrangle region we introduce the new parameters $x$ and $y$, related to parameters $u$ and $v$ by the relations
 
 $$ u(x,y) = u_a \frac{1-x-y+xy}{4} + u_b \frac{1+x-y-xy}{4} + u_c \frac{1+x+y+xy}{4} + u_d \frac{1-x+y-xy}{4},$$
 
 $$ v(x,y) = v_a \frac{1-x-y+xy}{4} + v_b \frac{1+x-y-xy}{4} + v_c \frac{1+x+y+xy}{4} + v_d \frac{1-x+y-xy}{4}. \tag{7.10.2}$$
 
-Points \( p_a, p_b, p_c, \) and \( p_d \) correspond to parameters \( x_a=-1, y_a=-1; x_b=1, y_b=-1; x_c=1, y_c=1; \) and \( x_d=1, y_d=1 \). Functions (7.10.2) are continuous, have continuous first-order partial derivatives, and map the square with vertices \( x=\pm 1, y=\pm 1 \) onto the given quadrangle integration domain. This mapping is unambiguous and has a non-zero Jacobian
+Points $p_a, p_b, p_c,$ and $p_d$ correspond to parameters $x_a=-1, y_a=-1; x_b=1, y_b=-1; x_c=1, y_c=1;$ and $x_d=1, y_d=1$. Functions (7.10.2) are continuous, have continuous first-order partial derivatives, and map the square with vertices $x=\pm 1, y=\pm 1$ onto the given quadrangle integration domain. This mapping is unambiguous and has a non-zero Jacobian
 
 $$ J(x,y) = \begin{vmatrix}
 \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\
@@ -564,10 +567,10 @@ Integration using Gaussian quadrature formulas is performed with respect to each
 
 $$\iint_{\Omega} f(u,v)dudv = \sum_{i=1}^{m} \sum_{j=1}^{n} w_i z_j f(u(x_i, y_j), v(x_i, y_j)) J(x_i, y_j), \tag{7.10.3}$$
 
-where \( x_1, x_2, \ldots, x_m \) are roots of the Legendre polynomial of degree \( m \), \( w_1, w_2, \ldots, w_m \) are the corresponding weighting factors, \( y_1, y_2, \ldots, y_n \) are roots of the Legendre polynomial of degree \( n \), and \( z_1, z_2, \ldots, z_n \) are the corresponding weighting factors. The roots \( x_i, i=1,\ldots,m \) of
-the Legendre polynomial of degree \( m \) and their corresponding weighting factors are shown in Table 7.10.1.
+where $x_1, x_2, \ldots, x_m$ are roots of the Legendre polynomial of degree $m$, $w_1, w_2, \ldots, w_m$ are the corresponding weighting factors, $y_1, y_2, \ldots, y_n$ are roots of the Legendre polynomial of degree $n$, and $z_1, z_2, \ldots, z_n$ are the corresponding weighting factors. The roots $x_i, i=1,\ldots,m$ of
+the Legendre polynomial of degree $m$ and their corresponding weighting factors are shown in Table 7.10.1.
 
-| \( m \) | \( x_i \) | Weighting factors |
+| $m$ | $x_i$ | Weighting factors |
 |-------|----------|------------------|
 | 1     | 0        | 2                |
 | 2     | ±0.57735026918962576450 | 1               |
@@ -590,18 +593,18 @@ the Legendre polynomial of degree \( m \) and their corresponding weighting fact
 |       | ±0.52553240991632898581 | 0.22238103445337447054 |
 |       | ±0.96028985649753623168 | 0.10122853629037625915 |
 
-The roots of the Legendre polynomials and the weighting factors are determined from the condition that (7.10.3) is an exact equality if \( f(x,y)J(x,y)=p_{2m-1}(x)p_{2n-1}(y) \), where \( p_{2m-1}(x) \) and \( p_{2n-1}(y) \) are polynomials of degree \( 2m-1 \) and \( 2n-1 \), respectively.
+The roots of the Legendre polynomials and the weighting factors are determined from the condition that (7.10.3) is an exact equality if $f(x,y)J(x,y)=p_{2m-1}(x)p_{2n-1}(y)$, where $p_{2m-1}(x)$ and $p_{2n-1}(y)$ are polynomials of degree $2m-1$ and $2n-1$, respectively.
 
 Let us compute the definite integral
 
 $$ I = \iint_A f(u,v)\,dudv \tag{7.10.4}$$
 
-on the triangle domain of the parameters of the surface. Suppose the vertices of the triangle domain are located at the points \( p_a=[u_a\ v_a]^T \), \( p_b=[u_b\ v_b]^T \), and \( p_c=[u_c\ v_c]^T \) on the parametric plane (see Fig. 7.10.2). For triangular domains, it is convenient to use three barycentric coordinates, \( a \), \( b \), and \( c \), computed at points \( p_a \), \( p_b \), and \( p_c \), instead of coordinates \( u \) and \( v \).
-The coordinates of an arbitrary point \( p = [u \ v]^T \) are represented by barycentric coordinates \( a, b, \) and \( c, \) using the formulas
+on the triangle domain of the parameters of the surface. Suppose the vertices of the triangle domain are located at the points $p_a=[u_a\ v_a]^T$, $p_b=[u_b\ v_b]^T$, and $p_c=[u_c\ v_c]^T$ on the parametric plane (see Fig. 7.10.2). For triangular domains, it is convenient to use three barycentric coordinates, $a$, $b$, and $c$, computed at points $p_a$, $p_b$, and $p_c$, instead of coordinates $u$ and $v$.
+The coordinates of an arbitrary point $p = [u \ v]^T$ are represented by barycentric coordinates $a, b,$ and $c,$ using the formulas
 
 $$ u = au_a + bu_b + cu_c; \quad v = av_a + bv_b + cv_c. \tag{7.10.5}$$
 
-The barycentric coordinates satisfy the equation: \( a + b + c = 1. \) The integrable function \( f(u,v) \) is represented as a function of the barycentric coordinates \( f(a,b,c) = f(u(a,b,c),v(a,b,c)). \) Only two of three barycentric coordinates are independent. Without loss of generality, we choose the first two barycentric coordinates as independent variables. Use the equalities (7.10.5) in the form
+The barycentric coordinates satisfy the equation: $a + b + c = 1.$ The integrable function $f(u,v)$ is represented as a function of the barycentric coordinates $f(a,b,c) = f(u(a,b,c),v(a,b,c)).$ Only two of three barycentric coordinates are independent. Without loss of generality, we choose the first two barycentric coordinates as independent variables. Use the equalities (7.10.5) in the form
 
 $$ u = a(u_a - u_c) + b(u_b - u_c) + u_c, \quad v = a(v_a - v_c) + b(v_b - v_c) + v_c $$
 
@@ -611,37 +614,37 @@ $$\iint_{\Delta} f(u,v) \, du \, dv = \iint_{\Delta} f(u(a,b,c),v(a,b,c)) J(a,b,
 
 $$\int_0^1 \left( \int_0^{1-a} f(u(a,b),v(a,b)) J(a,b) \, db \right) da,$$
 
-where \( J(a,b) = \begin{vmatrix} \frac{\partial u}{\partial a} & \frac{\partial u}{\partial b} \\ \frac{\partial v}{\partial a} & \frac{\partial v}{\partial b} \end{vmatrix} \) is the Jacobian of the coordinate transformation.
+where $J(a,b) = \begin{vmatrix} \frac{\partial u}{\partial a} & \frac{\partial u}{\partial b} \\ \frac{\partial v}{\partial a} & \frac{\partial v}{\partial b} \end{vmatrix}$ is the Jacobian of the coordinate transformation.
 
 With the transition to barycentric coordinates, and replacing the parameters, integral (7.10.4) can be calculated as a weighted sum of the values of the integrand in the domain of integration:
 
-$$\iint_{\Delta} f(u,v) \, du \, dv = \sum_{i=1}^m w_i f(u(a_i,b_i,c_i),v(a_i,b_i,c_i)),$$  
+$$\iint_{\Delta} f(u,v) \, du \, dv = \sum_{i=1}^m w_i f(u(a_i,b_i,c_i),v(a_i,b_i,c_i)),$$
 
 $$(7.10.6)$$
-where \( S = 0.5J(a,b) \) is the area of the triangle \( p_a p_b p_c \). The barycentric coordinates \( a_i, b_i, c_i, i=1,\ldots,m \) and weighting factors for cubature formulas for the triangular region are given in Table 7.10.2.
+where $S = 0.5J(a,b)$ is the area of the triangle $p_a p_b p_c$. The barycentric coordinates $a_i, b_i, c_i, i=1,\ldots,m$ and weighting factors for cubature formulas for the triangular region are given in Table 7.10.2.
 
-| \( m \) | \( a_i \) | \( b_i \) | \( c_i \) | Weighting factors |
+| $m$ | $a_i$ | $b_i$ | $c_i$ | Weighting factors |
 |-------|--------|--------|--------|-----------------|
 | 1     | 1/3    | 1/3    | 1/3    | 1               |
 | 3     | 2/3    | 1/6    | 1/6    | 1/3             |
 |       | 1/6    | 2/3    | 1/6    | 1/3             |
 |       | 1/6    | 1/6    | 2/3    | 1/3             |
 | 4     | 1/3    | 1/3    | 1/3    | -0.5625         |
-|       | \( a \) | \( b \) | \( b \) | 0.5208333333333333 |
-|       | \( b \) | \( a \) | \( b \) | 0.5208333333333333 |
-|       | \( b \) | \( b \) | \( a \) | 0.5208333333333333 |
-| where \( a = 0.6 \) | \( b = 0.2 \) |
+|       | $a$ | $b$ | $b$ | 0.5208333333333333 |
+|       | $b$ | $a$ | $b$ | 0.5208333333333333 |
+|       | $b$ | $b$ | $a$ | 0.5208333333333333 |
+| where $a = 0.6$ | $b = 0.2$ |
 
-The barycentric coordinates \( a_i, b_i, c_i \), and weighting factors \( w_i \) for cubature formulas for a triangular region defined by the condition that (7.10.6) is an exact equality if
+The barycentric coordinates $a_i, b_i, c_i$, and weighting factors $w_i$ for cubature formulas for a triangular region defined by the condition that (7.10.6) is an exact equality if
 
 $$ f(u(a,b,c),v(a,b,c)) = (A_m a^m + B_m b^m + C_m c^m)$$
 
-is a polynomial of degree \( m \).
+is a polynomial of degree $m$.
 
 ### 7.11. Principal Moments of Inertia
 
-In a parallel translation of the origin of the Cartesian coordinate system, the inertia tensor of the solid and its components changes. Let the origin of the Cartesian coordinate system be translated to the center of mass of a solid, \( c \), having in the original system the coordinates \( x_c, y_c, \) and \( z_c \). The coordinate system with the origin at the center of mass of the object is called the **central coordinate system** for this object.
-In the central coordinate system, the radius vector of a point of the solid is \( r = r - c \), and the components of the inertia tensor are
+In a parallel translation of the origin of the Cartesian coordinate system, the inertia tensor of the solid and its components changes. Let the origin of the Cartesian coordinate system be translated to the center of mass of a solid, $c$, having in the original system the coordinates $x_c, y_c,$ and $z_c$. The coordinate system with the origin at the center of mass of the object is called the **central coordinate system** for this object.
+In the central coordinate system, the radius vector of a point of the solid is $r = r - c$, and the components of the inertia tensor are
 
 $$ J_{xx} = \iiint (y^2 + z^2 - 2yy_c - 2zz_c + y_c^2 + z_c^2) \rho dV = J_{xx} - (y_c^2 + z_c^2)M,$$
 
@@ -657,13 +660,13 @@ $$ J_{xy} = \iiint (xy - xy_c - yx_c + x_c y_c) \rho dV = J_{xy} - x_c y_c M.$$
 
 The moments of inertia in the central coordinate system are called the **central moments of inertia**.
 
-In the formula \( L = J \omega \), the momentum vector \( L \) generally does not coincide with the direction of the angular velocity vector \( \omega \). As a result, during rotation of the solid about a predetermined axis, reactions arise at points of attachment of the solid; these reactions depend on the absolute value of the angular velocity. This rotation is dynamically unstable.
+In the formula $L = J \omega$, the momentum vector $L$ generally does not coincide with the direction of the angular velocity vector $\omega$. As a result, during rotation of the solid about a predetermined axis, reactions arise at points of attachment of the solid; these reactions depend on the absolute value of the angular velocity. This rotation is dynamically unstable.
 
-Let us find such directions for the given inertia tensor \( J \) for which the direction of the momentum vector \( L \) coincides with the direction of the angular velocity vector \( \omega \). Let this direction be determined by the unit vector \( e = [x \ y \ z]^T \); then the vector \( Je \) will be proportional to the vector \( e \):
+Let us find such directions for the given inertia tensor $J$ for which the direction of the momentum vector $L$ coincides with the direction of the angular velocity vector $\omega$. Let this direction be determined by the unit vector $e = [x \ y \ z]^T$; then the vector $Je$ will be proportional to the vector $e$:
 
 $$ Je - \lambda e = 0,$$
 
-where \( \lambda \) is an as-yet-unknown scalar. Projecting this equation onto the coordinate axes, we obtain three equations:
+where $\lambda$ is an as-yet-unknown scalar. Projecting this equation onto the coordinate axes, we obtain three equations:
 
 $$(J_{xx} - \lambda)x - J_{xy}y - J_{xz}z = 0,$$
 
@@ -671,7 +674,7 @@ $$-J_{yx}x + (J_{yy} - \lambda)y - J_{yz}z = 0,$$
 
 $$-J_{zx}x - J_{zy}y + (J_{zz} - \lambda)z = 0,$$
 
-which can be considered as a homogeneous system of linear algebraic equations \( x, y, \) and \( z \). A trivial solution does not suit us because we want to find a vector for which
+which can be considered as a homogeneous system of linear algebraic equations $x, y,$ and $z$. A trivial solution does not suit us because we want to find a vector for which
 
 $$
 x^2 + y^2 + z^2 = 1.$$
@@ -683,7 +686,7 @@ $$\lambda^3 - I_1 \lambda^2 + I_2 \lambda - I_3 = 0,$$
 
 where $I_1 = J_{xx} + J_{yy} + J_{zz}$,
 
-$$I_2 = \begin{vmatrix} J_{xx} & -J_{xy} \\ -J_{yx} & J_{yy} \end{vmatrix} + \begin{vmatrix} J_{yy} & -J_{yz} \\ -J_{zy} & J_{zz} \end{vmatrix} + \begin{vmatrix} J_{zz} & -J_{zx} \\ -J_{xz} & J_{xx} \end{vmatrix}, \quad I_3 = \begin{vmatrix} J_{xx} & -J_{xy} & -J_{xz} \\ -J_{yx} & J_{yy} & -J_{yz} \\ -J_{zx} & -J_{zy} & J_{zz} \end{vmatrix}.$$  
+$$I_2 = \begin{vmatrix} J_{xx} & -J_{xy} \\ -J_{yx} & J_{yy} \end{vmatrix} + \begin{vmatrix} J_{yy} & -J_{yz} \\ -J_{zy} & J_{zz} \end{vmatrix} + \begin{vmatrix} J_{zz} & -J_{zx} \\ -J_{xz} & J_{xx} \end{vmatrix}, \quad I_3 = \begin{vmatrix} J_{xx} & -J_{xy} & -J_{xz} \\ -J_{yx} & J_{yy} & -J_{yz} \\ -J_{zx} & -J_{zy} & J_{zz} \end{vmatrix}.$$
 
 Equation (7.11.3) is called the characteristic equation of the inertia tensor. Roots $\lambda_1$, $\lambda_2$, and $\lambda_3$ of the characteristic equation are real-valued, since the matrix of the inertia tensor is symmetric. Scalars $\lambda_1$, $\lambda_2$, and $\lambda_3$ are eigenvalues of the moments of inertia matrix. Each $\lambda_i$, $i=1,2,3$, corresponds to an eigenvector $e_i$.
 
@@ -693,7 +696,7 @@ $$J \cdot e_1 - \lambda_1 e_1 = 0, \quad J \cdot e_2 - \lambda_2 e_2 = 0.$$
 
 Compute the inner product of the first equation with $e_2$, and the second with $e_1$, and subtract the second from the first. Using the symmetry of the inertia tensor, we obtain
 
-$$(\lambda_2 - \lambda_1) e_1 \cdot e_2 = 0.$$  
+$$(\lambda_2 - \lambda_1) e_1 \cdot e_2 = 0.$$
 
 The last equality, and the assumption $\lambda_2 \neq \lambda_1$, imply that eigenvectors $e_1$ and $e_2$ are orthogonal. Similarly, we can prove the orthogonality of other eigenvectors. The eigenvector determines the principal direction of the inertia tensor in the space. If two of the three eigenvalues of the matrix of inertia are equal, then we can define only one of the principal directions, and other principal directions can be any directions orthogonal to the determined direction. If all three eigenvalues of the matrix of inertia are equal, then the principal directions can be any directions in space. In any case, we can obtain three mutually orthogonal principal directions.
 
@@ -711,11 +714,11 @@ J_{11} & 0 & 0 \\
 0 & 0 & J_{33}
 \end{bmatrix}.$$
 
-The coordinate system in which all the centrifugal moments of inertia of the solid are zero is called the principal coordinate system. The moments of inertia, \(J_{11}, J_{22},\) and \(J_{33}\), in the main coordinate system are called principal moments of inertia. The principal directions of the inertia tensor depend on the fixed point of the solid (that is, on the choice of the origin of the coordinate system). The central coordinate system in which all centrifugal moments of inertia of the solid are zero is called the principal central coordinate system. The moments of inertia in the principal central coordinate system are called principal central moments of inertia. The directions of the principal axes of inertia of the solid lie in the planes of symmetry. The origin of the principal central coordinate system is located in the center of mass of the solid.
+The coordinate system in which all the centrifugal moments of inertia of the solid are zero is called the principal coordinate system. The moments of inertia, $J_{11}, J_{22},$ and $J_{33}$, in the main coordinate system are called principal moments of inertia. The principal directions of the inertia tensor depend on the fixed point of the solid (that is, on the choice of the origin of the coordinate system). The central coordinate system in which all centrifugal moments of inertia of the solid are zero is called the principal central coordinate system. The moments of inertia in the principal central coordinate system are called principal central moments of inertia. The directions of the principal axes of inertia of the solid lie in the planes of symmetry. The origin of the principal central coordinate system is located in the center of mass of the solid.
 
-Let us find the principal axes of inertia. Let the principal moment of inertia \(\lambda_i\) correspond to the principal direction defined by the unit vector \(e_i = [x_i, y_i, z_i]^T\). There are three possible cases of relations between the roots of the characteristic equation. The first case is when all the roots of the characteristic equation are distinct; the second case is when two of the three roots of the characteristic equation are equal and different from the third root; and the third case is when all three roots of the characteristic equation are equal.
+Let us find the principal axes of inertia. Let the principal moment of inertia $\lambda_i$ correspond to the principal direction defined by the unit vector $e_i = [x_i, y_i, z_i]^T$. There are three possible cases of relations between the roots of the characteristic equation. The first case is when all the roots of the characteristic equation are distinct; the second case is when two of the three roots of the characteristic equation are equal and different from the third root; and the third case is when all three roots of the characteristic equation are equal.
 
-If all the roots of the characteristic equation are different (\(\lambda_1 \neq \lambda_2 \neq \lambda_3\)), then for each \(\lambda_i\) form the system of equations (7.11.1):
+If all the roots of the characteristic equation are different ($\lambda_1 \neq \lambda_2 \neq \lambda_3$), then for each $\lambda_i$ form the system of equations (7.11.1):
 
 $$(J_{11} - \lambda_i)x_i + J_{12}y_i + J_{13}z_i = 0,$$
 $$
@@ -741,20 +744,20 @@ J_{11} - \lambda_i & J_{12} \\
 J_{12} & J_{22} - \lambda_i
 \end{vmatrix}.$$
 
-At least one of them must be non-zero. Let \(A_2 \neq 0\). Then the components of the corresponding principal vector are found from the system of equations
+At least one of them must be non-zero. Let $A_2 \neq 0$. Then the components of the corresponding principal vector are found from the system of equations
 
 $$(J_{11} - \lambda_i)x_i + J_{12}y_i + J_{13}z_i = 0,$$
 $$
 J_{13}x_i + J_{23}y_i + (J_{33} - \lambda_i)z_i = 0,$$
 $$
 x_i^2 + y_i^2 + z_i^2 = 1.$$
-Having solved these three equations, we determine the eigenvectors \( e_i = [x_i, y_i, z_i]^T \) for each eigenvalue \( \lambda_i, i=1,2,3 \).
+Having solved these three equations, we determine the eigenvectors $e_i = [x_i, y_i, z_i]^T$ for each eigenvalue $\lambda_i, i=1,2,3$.
 
-If two of the three roots of the characteristic equation are equal—for example, \( \lambda_1 = \lambda_2 \neq \lambda_3 \)—then the basis vector \( e_3 = [x_3, y_3, z_3]^T \) can be found as described above. The other two basis vectors can be any unit vectors that are mutually orthogonal, and orthogonal to vector \( e_3 \).
+If two of the three roots of the characteristic equation are equal—for example, $\lambda_1 = \lambda_2 \neq \lambda_3$—then the basis vector $e_3 = [x_3, y_3, z_3]^T$ can be found as described above. The other two basis vectors can be any unit vectors that are mutually orthogonal, and orthogonal to vector $e_3$.
 
-If \( \lambda_1 = \lambda_2 = \lambda_3 \), the eigenvectors can be any three mutually orthogonal unit vectors, and \( \lambda_i = I_1/3 \).
+If $\lambda_1 = \lambda_2 = \lambda_3$, the eigenvectors can be any three mutually orthogonal unit vectors, and $\lambda_i = I_1/3$.
 
-To determine the eigenvalues of the matrix of inertia, we must solve cubic equation (7.11.3). Replace the unknown \( \lambda \) in equation (7.11.3) by the new unknown \( \chi \), related to \( \lambda \) by the equality \( \lambda = \chi + I_1/3 \). We obtain an incomplete cubic equation for \( \chi \) that does not contain any factor with the square of the new unknown:
+To determine the eigenvalues of the matrix of inertia, we must solve cubic equation (7.11.3). Replace the unknown $\lambda$ in equation (7.11.3) by the new unknown $\chi$, related to $\lambda$ by the equality $\lambda = \chi + I_1/3$. We obtain an incomplete cubic equation for $\chi$ that does not contain any factor with the square of the new unknown:
 
 $$\chi^3 + p \chi + q = 0,$$
 
@@ -774,11 +777,11 @@ In the Cardano formula, the cubic radicals are summed,
 
 $$\gamma_1 = \sqrt[3]{-\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}, \quad \gamma_2 = \sqrt[3]{-\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}},$$
 
-satisfying the condition \( \gamma_1\gamma_2 = -p/3 \). Thus, the roots of the incomplete cubic equation (7.11.4) are
+satisfying the condition $\gamma_1\gamma_2 = -p/3$. Thus, the roots of the incomplete cubic equation (7.11.4) are
 
 $$\chi_1 = \gamma_1 + \gamma_2, \quad \chi_2 = \varepsilon\gamma_1 + \varepsilon^2\gamma_2, \quad \chi_3 = \varepsilon^2\gamma_1 + \varepsilon\gamma_2,$$
 
-where \( \varepsilon = -1/2 + i\sqrt{3}/2 \) is cube root of unity and \( \varepsilon^2 = -1/2 - i\sqrt{3}/2 \) is the square of this cube root of unity.
+where $\varepsilon = -1/2 + i\sqrt{3}/2$ is cube root of unity and $\varepsilon^2 = -1/2 - i\sqrt{3}/2$ is the square of this cube root of unity.
 
 The Cardano formula allows finding three roots, which are complex in general, of the cubic equation (7.11.4). The coefficients of the cubic equation may generally be complex. For calculating the principal moments of inertia, coefficients (7.11.5) and
 (7.11.6) of the incomplete cubic equation, as well as invariants $I_1$, $I_2$, and $I_3$, are real numbers. In the Cardano formula, the term
@@ -789,11 +792,11 @@ is called the **discriminant** of the incomplete cubic equation (7.11.4). If coe
 
 If $D<0$, then the numbers under each of the cubic radical signs in the Cardano formulas are real. The cube root of a real number has one real and two complex conjugate values. Let the real values of these cubic radicals be $\gamma_1$ and $\gamma_2$; then the cubic equation with real coefficients has one real root and two complex conjugate roots:
 
-$$\chi_1 = \gamma_1 + \gamma_2, \quad \chi_2 = \frac{\gamma_1 + \gamma_2}{2} + i\sqrt{3} \frac{\gamma_1 - \gamma_2}{2}, \quad \chi_3 = \frac{\gamma_1 + \gamma_2}{2} - i\sqrt{3} \frac{\gamma_1 - \gamma_2}{2}.$$  
+$$\chi_1 = \gamma_1 + \gamma_2, \quad \chi_2 = \frac{\gamma_1 + \gamma_2}{2} + i\sqrt{3} \frac{\gamma_1 - \gamma_2}{2}, \quad \chi_3 = \frac{\gamma_1 + \gamma_2}{2} - i\sqrt{3} \frac{\gamma_1 - \gamma_2}{2}.$$
 
 If $D=0$, then $\gamma_1 = \gamma_2 = \sqrt[3]{-q/2}$, $\varepsilon + \varepsilon^2 = -1$, and the cubic equation with real coefficients has three real roots, two of which are identical, and the third is the sum of the first two, with the opposite sign:
 
-$$\chi_1 = 2\sqrt[3]{-q/2}, \quad \chi_2 = -\sqrt[3]{-q/2}, \quad \chi_3 = -\sqrt[3]{-q/2}.$$  
+$$\chi_1 = 2\sqrt[3]{-q/2}, \quad \chi_2 = -\sqrt[3]{-q/2}, \quad \chi_3 = -\sqrt[3]{-q/2}.$$
 
 If $D>0$, then the numbers under the signs of the cubic radicals in the Cardano formula are complex conjugate, cube roots of which are complex numbers in general. Among the roots of a cubic equation with real coefficients, one must be a real number; hence, $\gamma_1$ and $\gamma_2$ are complex conjugate numbers:
 
@@ -821,7 +824,7 @@ p = -\frac{1}{3} I_1^2 + I_2, \quad q = -\frac{2}{27} I_1^3 + \frac{1}{3} I_1 I_
 
 $$\gamma = \arccos\left(\frac{q}{2r^3}\right).$$
 
-Possible special cases: if \( p = 0 \), then \( \lambda_1 = \lambda_2 = \lambda_3 = \frac{I_1}{3} \), if \( D = 0 \), then
+Possible special cases: if $p = 0$, then $\lambda_1 = \lambda_2 = \lambda_3 = \frac{I_1}{3}$, if $D = 0$, then
 
 $$\lambda_1 = \frac{I_1}{3} - 2\sqrt[3]{\frac{q}{2}}, \quad \lambda_2 = \lambda_3 = \frac{I_1}{3} + \sqrt[3]{\frac{q}{2}}.$$
 

@@ -133,7 +133,7 @@ Using vectors $a_1$, $a_2$, $b_1$, and $b_2$, and normals $m_1$ and $m_2$, it is
 
 Thus, in a Boolean operation of solid union, the following conditions must be met for the new edge:
 
-$$m_1 \cdot a_2 > 0 \quad \text{and} \quad m_2 \cdot b_1 > 0.$$  
+$$m_1 \cdot a_2 > 0 \quad \text{and} \quad m_2 \cdot b_1 > 0.$$
 
 (5.3.1)
 
@@ -143,14 +143,14 @@ Otherwise, the considered new edge in a Boolean operation of union of solids sho
 
 Thus, the following conditions for the new edge must be met in a Boolean operation of the intersection of solids:
 
-$$m_1 \cdot b_2 < 0 \quad \text{and} \quad m_2 \cdot a_1 < 0.$$  
+$$m_1 \cdot b_2 < 0 \quad \text{and} \quad m_2 \cdot a_1 < 0.$$
 
 (5.3.2)
 
 Otherwise the considered new edge in the Boolean operations of intersection of solids should not be constructed (if it is constructed, it must be discarded).
 
 To answer the question whether the face of the solid extends inside or outside another solid from the new edge, one should be able to determine the position of a point $p$ relative to the solid: whether the point $p$ belongs to the inner space of the solid, whether it lies on the surface of the solid, or whether it is located outside the solid. To do this, let us find the point $p_0$ nearest to point $p$ on the face of one of the solid shells. Then we construct the vector $v = p - p_0$ from the nearest point $p_0$ to the point $p$, and compute the normal to shell $m$ at point $p_0$. The method of calculating the normal to the shell depends on what would be the closest point of the shell. The nearest point of the shell can be either the projection of point $p$ onto one of the faces, or the projection of point $p$ onto one of the edges; or it can be one of the vertices of the shell. If the nearest point of the shell is the projection of point $p$ onto one of the faces, then the normal to this face at the projection point can be taken as the normal to the shell $m$. If the nearest point of the shell is the projection of point $p$ onto one of the edges, then the normalized sum of normals of the faces joined at the considered edge at the point of projection is taken as the normal to the shell $m$ at the edge. If the nearest point of the shell is a vertex of the shell, then the normalized sum of the normals to the edges joined at the considered vertex at the projection point is taken as a normal to the shell $m$ at the vertex.
-To determine the position of the point relative to the solid, let us use the principle of solids construction according to which the normal to the surface of the solid is directed outward from the solid. The location of the point relative to the solid shell is determined by the dot product of the vector \( \mathbf{v} \) and the normal \( \mathbf{m} \) at the nearest point of the shells of the solid. If the length of vector \( \mathbf{v} \) is zero, then \( \mathbf{v} \cdot \mathbf{m} = 0 \), and point \( p \) is located on the surface of the solid; if \( \mathbf{v} \cdot \mathbf{m} > 0 \), then point \( p \) is located outside the solid; and if \( \mathbf{v} \cdot \mathbf{m} < 0 \), then point \( p \) is located inside the solid.
+To determine the position of the point relative to the solid, let us use the principle of solids construction according to which the normal to the surface of the solid is directed outward from the solid. The location of the point relative to the solid shell is determined by the dot product of the vector $\mathbf{v}$ and the normal $\mathbf{m}$ at the nearest point of the shells of the solid. If the length of vector $\mathbf{v}$ is zero, then $\mathbf{v} \cdot \mathbf{m} = 0$, and point $p$ is located on the surface of the solid; if $\mathbf{v} \cdot \mathbf{m} > 0$, then point $p$ is located outside the solid; and if $\mathbf{v} \cdot \mathbf{m} < 0$, then point $p$ is located inside the solid.
 
 If any of the solid-operands has voids and, therefore, is described by several shells, then the shells that are not changed by the operation and the shells of the resultant of the Boolean operation should be verified for their inclusion into each other. In the general case, the resultant of the Boolean operation may also have several shells.
 
@@ -169,15 +169,15 @@ In this particular case, the solid can be sliced by a plane. Using this operatio
 
 Suppose we are given a solid and a plane. Let us construct a solid symmetrical to the given solid with respect to the given plane. The symmetric solid is a mirror image of the given solid. The geometry of the solid is described by points, curves, and surfaces, constructed from vectors and scalars. Therefore, the construction of the symmetric solid ultimately reduces to a symmetry transformation of the radius-vectors of the points, free vectors, and scalars. Scalars do not change under symmetry transformation; free vectors change their direction; and points change their positions.
 
-Let the plane of symmetry pass through \( p_0 \), and a normal to the plane be described by a vector of unit length \( i = [i_1 \ i_2 \ i_3]^T \) (see Fig. 5.5.1). Let us determine the coordinates of point \( r \) symmetrical to point \( r_0 \) relative to the plane.
+Let the plane of symmetry pass through $p_0$, and a normal to the plane be described by a vector of unit length $i = [i_1 \ i_2 \ i_3]^T$ (see Fig. 5.5.1). Let us determine the coordinates of point $r$ symmetrical to point $r_0$ relative to the plane.
 
-Construct a vector \( p = r_0 - p_0 \), and represent it as a sum of two vectors: the projection onto the plane of symmetry and a component \( n \), perpendicular to the plane of symmetry:
+Construct a vector $p = r_0 - p_0$, and represent it as a sum of two vectors: the projection onto the plane of symmetry and a component $n$, perpendicular to the plane of symmetry:
 
 $$
 p = (p - n) + n,
 $$
 
-where \( n = (p \cdot i) i \). After mirroring the vector \( p \), its component \( n \)—normal to the plane—changes and becomes equal to \(-n\). Projection \((p - (p \cdot i) i)\) of vector \( p \) onto the plane of symmetry does not change. The location of the point symmetrical to point \( r_0 \) is described by the radius-vector
+where $n = (p \cdot i) i$. After mirroring the vector $p$, its component $n$—normal to the plane—changes and becomes equal to $-n$. Projection $(p - (p \cdot i) i)$ of vector $p$ onto the plane of symmetry does not change. The location of the point symmetrical to point $r_0$ is described by the radius-vector
 
 $$
 r = p_0 + (p - (p \cdot i) i) - (p \cdot i) i = p_0 + (E - 2 i i^T) \cdot p = p_0 + A \cdot (r_0 - p_0),

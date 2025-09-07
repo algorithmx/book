@@ -38,7 +38,8 @@ for $n$ parameters $p_1, p_2, \ldots, p_n$ of the geometric model. The number of
 $$f_1(p_1 + \Delta p_1, p_2 + \Delta p_2, \ldots, p_n + \Delta p_n) = 0,$$
 $$f_2(p_1 + \Delta p_1, p_2 + \Delta p_2, \ldots, p_n + \Delta p_n) = 0,$$
 $$\ldots \ldots \ldots \ldots \ldots$$
-$$f_m(p_1 + \Delta p_1, p_2 + \Delta p_2, \ldots, p_n + \Delta p_n) = 0.$$ (6.1.1)
+$$f_m(p_1 + \Delta p_1, p_2 + \Delta p_2, \ldots, p_n + \Delta p_n) = 0.$$
+(6.1.1)
 
 The unknowns of this system are variations of the model parameters $\Delta p_1, \Delta p_2, \ldots, \Delta p_n$. After solving system of equations (6.1.1), the model should be reconstructed according to the new values of parameters $p_i + \Delta p_i, i=1,2,\ldots,n$. If the non-equilibrium system of equations of geometric constraints cannot be solved, then we should return to the previous equilibrium state of the geometrical model and constants of equations, under which the geometric constraint equations are satisfied.
 
@@ -53,26 +54,26 @@ We can use a point as a special object. Each point has three degrees of freedom,
 
 We can use a plane as a special object. Each plane has three degrees of freedom, and is described by three numbers. We can use a sphere as a special object. A sphere has four degrees of freedom, including change of radius, and is described by four numbers. A straight line can be obtained by intersecting two planes. A sphere and a plane intersecting it provide a circle. We can use other geometric objects as special objects.
 
-Consider some geometric constraints that can be created using points as special objects. Suppose there are two points, \( p_1 \) and \( p_2 \), global coordinates of which are, respectively, \( x_1, y_1, z_1 \) and \( x_2, y_2, z_2 \). We can impose a geometric constraint on points \( p_1 \) and \( p_2 \)—the linear dimension described by the equation
+Consider some geometric constraints that can be created using points as special objects. Suppose there are two points, $p_1$ and $p_2$, global coordinates of which are, respectively, $x_1, y_1, z_1$ and $x_2, y_2, z_2$. We can impose a geometric constraint on points $p_1$ and $p_2$—the linear dimension described by the equation
 
 $$
 \sqrt{(x_2 + \Delta x_2 - x_1 - \Delta x_1)^2 + (y_2 + \Delta y_2 - y_1 - \Delta y_1)^2 + (z_2 + \Delta z_2 - z_1 - \Delta z_1)^2} - d = 0, \quad (6.2.1)
 $$
 
-where \( d \) is the desired dimension, and \( \Delta x_1, \Delta y_1, \Delta z_1 \) and \( \Delta x_2, \Delta y_2, \Delta z_2 \) are a variation of the coordinates of the related points to be determined. The linear dimension is shown in Fig. 6.2.1.
+where $d$ is the desired dimension, and $\Delta x_1, \Delta y_1, \Delta z_1$ and $\Delta x_2, \Delta y_2, \Delta z_2$ are a variation of the coordinates of the related points to be determined. The linear dimension is shown in Fig. 6.2.1.
 
 ![Fig. 6.2.1.](image)
 
-The geometric constraint imposed on points \( p_1 \) and \( p_2 \), which is the dimension along one of the coordinates, is described by one of the equations
+The geometric constraint imposed on points $p_1$ and $p_2$, which is the dimension along one of the coordinates, is described by one of the equations
 
 $$
 |x_2 + \Delta x_2 - x_1 - \Delta x_1| = d_x, \quad |y_2 + \Delta y_2 - y_1 - \Delta y_1| = d_y, \quad |z_2 + \Delta z_2 - z_1 - \Delta z_1| = d_z,
 $$
 
-where \( d_x, d_y, d_z \) are the desired dimensions. One of these equations, applied to the segment \( r(t) = (1-t)p_1 + tp_2 \), can make the segment parallel to the corresponding
+where $d_x, d_y, d_z$ are the desired dimensions. One of these equations, applied to the segment $r(t) = (1-t)p_1 + tp_2$, can make the segment parallel to the corresponding
 coordinate plane. Two of these equations can make the segment parallel to one of the coordinate axes.
 
-The geometric constraint ensuring the coincidence of points \( p_1 \) and \( p_2 \) is described by the equations
+The geometric constraint ensuring the coincidence of points $p_1$ and $p_2$ is described by the equations
 
 $$
 x_2 + \Delta x_2 - x_1 - \Delta x_1 = 0,
@@ -90,11 +91,11 @@ $$
 p + \Delta p - p_0 = 0,
 $$
 
-where \( p \) is the current value of the parameter, \( \Delta p \) is the variation of the parameter subject to the determination, and \( p_0 \) is the given value of the parameter that must be preserved.
+where $p$ is the current value of the parameter, $\Delta p$ is the variation of the parameter subject to the determination, and $p_0$ is the given value of the parameter that must be preserved.
 
 We can fix a solid, or some dimension of the solid, with fixing equations. Equations for fixed parameters can be isolated from a system into a separate group. The system of equations for the fixed parameters and the system of equations for the other parameters do not depend on each other, and can be solved separately.
 
-Geometric constraints can be set between any elements of the model, and these constraints can also be of any kind—as long as they can be presented in the form of equations for some special objects. The set of special objects is expanded so that it is possible to impose all the necessary geometric constraints on the elements of the model. For example, let us assume that we want to determine the linear dimension between a certain point of the curve \( r_1(t_1) \) and a certain point of the curve \( r_2(t_2) \). Assume that the curves are segments for simplicity:
+Geometric constraints can be set between any elements of the model, and these constraints can also be of any kind—as long as they can be presented in the form of equations for some special objects. The set of special objects is expanded so that it is possible to impose all the necessary geometric constraints on the elements of the model. For example, let us assume that we want to determine the linear dimension between a certain point of the curve $r_1(t_1)$ and a certain point of the curve $r_2(t_2)$. Assume that the curves are segments for simplicity:
 
 $$
 r_1(t_1) = (1-t_1)p_1 + t_1p_3,
@@ -103,7 +104,7 @@ $$
 r_2(t_2) = (1-t_2)p_2 + t_2p_4,
 $$
 
-reference points of which are associated with the specific points; we consider the midpoints of the segments as the linking points. The midpoints of the segments are determined by parameters \( t_1=1/2, t_2=1/2 \). The linear dimension (6.2.1) for the midpoints of the segments links twelve parameters, which are the changes in the coordinates of the special points that control the reference points of the segments.
+reference points of which are associated with the specific points; we consider the midpoints of the segments as the linking points. The midpoints of the segments are determined by parameters $t_1=1/2, t_2=1/2$. The linear dimension (6.2.1) for the midpoints of the segments links twelve parameters, which are the changes in the coordinates of the special points that control the reference points of the segments.
 
 Geometric model parameters may be linked by algebraic equations; for example,
 
@@ -111,25 +112,25 @@ $$
 f(a+\Delta a, b+\Delta b, ..., c+\Delta c) = 0,
 $$
 
-where \( a, b, c \) are model parameters, and \( \Delta a, \Delta b, ..., \Delta c \) are desired changes of the parameters. These constraints can link not only the described model parameters, but also special variables. Special variables are created to control the geometric model. For example, to make several parameters of the various elements of the geometric model dependent on a common parameter, we introduce a special variable and a set of algebraic constraints that describe the required dependencies of the model parameters on the special variable.
+where $a, b, c$ are model parameters, and $\Delta a, \Delta b, ..., \Delta c$ are desired changes of the parameters. These constraints can link not only the described model parameters, but also special variables. Special variables are created to control the geometric model. For example, to make several parameters of the various elements of the geometric model dependent on a common parameter, we introduce a special variable and a set of algebraic constraints that describe the required dependencies of the model parameters on the special variable.
 
 Geometric model parameters can be related by algebraic inequalities. In the process of solving a system of geometric constraint equations, inequalities are replaced
-by the corresponding equations. Suppose, for example, it is required to relate the parameters of the model \(a\) and \(b\) by the inequality \(a > b\). During the solution, inequality \(a > b\) is replaced by the equation
+by the corresponding equations. Suppose, for example, it is required to relate the parameters of the model $a$ and $b$ by the inequality $a > b$. During the solution, inequality $a > b$ is replaced by the equation
 
 $$
 a + \Delta a - b - \Delta b = e,
 $$
 
-where \(e = a + \Delta a - b - \Delta b\), if \(a + \Delta a > b + \Delta b\), and \(e = 0\), if \(a + \Delta a \leq b + \Delta b\). If the inequality is satisfied at the next iteration, it is replaced by the identity; if inequality is not satisfied, it is replaced by the strict equality. Geometric constraints built on inequalities are called non-strict geometric constraints.
+where $e = a + \Delta a - b - \Delta b$, if $a + \Delta a > b + \Delta b$, and $e = 0$, if $a + \Delta a \leq b + \Delta b$. If the inequality is satisfied at the next iteration, it is replaced by the identity; if inequality is not satisfied, it is replaced by the strict equality. Geometric constraints built on inequalities are called non-strict geometric constraints.
 
 ### 6.3. Positioning of a Set of Solids
 
 To determine the geometric relationships between the elements of a model of some assembly, the parts of which are represented by a set of solids, it is convenient to use the local coordinate systems as special objects of the geometric constraints. Every solid is associated with a local coordinate system, the position of which is described in the global Cartesian coordinate system. Thus, the positions of the solids relative to each other are reduced to the change in the position of the coordinate systems associated with the solids.
 
-Every solid in three-dimensional space has six degrees of freedom: three translational and three rotational. Let us introduce six parameters for each solid: three rotational angles and three translations. Denote the translations of the \(j\)-th solid along the first, second, and third global axis by \(\Delta x_j\), \(\Delta y_j\), and \(\Delta z_j\) respectively, and denote the rotation angles of the \(j\)-th solid around an axis passing through the origin of the local coordinate system parallel to the first, second, and third global axis, respectively, by \(\Delta \alpha_j\), \(\Delta \beta_j\), \(\Delta \gamma_j\). Let us call these rotation axes the first, second, and third, respectively. If the position of the \(j\)-th solid does not require changes, then \(\Delta \alpha_j\), \(\Delta \beta_j\), \(\Delta \gamma_j\), \(\Delta x_j\), \(\Delta y_j\), and \(\Delta z_j\) are zeros. If it is required to change the position of the \(i\)-th solid, then this change is made in four steps: Rotate the solid around the first axis by angle \(\Delta \alpha_i\); rotate the solid about the second axis by angle \(\Delta \beta_i\); rotate the solid around the third axis by angle \(\Delta \gamma_i\); and displace the solid by the vector \([\Delta x_i, \Delta y_i, \Delta z_i]^T\). An example of a local coordinate system and the parameters of a solid is shown in Fig. 6.3.1.
+Every solid in three-dimensional space has six degrees of freedom: three translational and three rotational. Let us introduce six parameters for each solid: three rotational angles and three translations. Denote the translations of the $j$-th solid along the first, second, and third global axis by $\Delta x_j$, $\Delta y_j$, and $\Delta z_j$ respectively, and denote the rotation angles of the $j$-th solid around an axis passing through the origin of the local coordinate system parallel to the first, second, and third global axis, respectively, by $\Delta \alpha_j$, $\Delta \beta_j$, $\Delta \gamma_j$. Let us call these rotation axes the first, second, and third, respectively. If the position of the $j$-th solid does not require changes, then $\Delta \alpha_j$, $\Delta \beta_j$, $\Delta \gamma_j$, $\Delta x_j$, $\Delta y_j$, and $\Delta z_j$ are zeros. If it is required to change the position of the $i$-th solid, then this change is made in four steps: Rotate the solid around the first axis by angle $\Delta \alpha_i$; rotate the solid about the second axis by angle $\Delta \beta_i$; rotate the solid around the third axis by angle $\Delta \gamma_i$; and displace the solid by the vector $[\Delta x_i, \Delta y_i, \Delta z_i]^T$. An example of a local coordinate system and the parameters of a solid is shown in Fig. 6.3.1.
 
 ![Fig. 6.3.1](image-url)
-After changing the \( j \)-th solid position, point \( a \) of the solid is described by the radius-vector \( o_j + M_j(a - o_j) \), where \( o_j \) is the origin of the \( j \)-th local coordinate system, and vector \( n \) of the \( j \)-th solid takes the value \( M_j n \). Matrix \( M_j \) is represented in expanded form (1.14.7), and the radius-vectors of the points and vectors—in the forms (1.14.8) and (1.14.9) respectively. Matrix \( M_j \) describes the change of position of the \( j \)-th solid, and is expressed in terms of quantities \( \Delta \alpha_j, \Delta \beta_j, \Delta \gamma_j, \Delta x_j, \Delta y_j, \Delta z_j \). Matrix \( M_j \) is obtained by the product of three rotation matrices and a displacement matrix: \( M_j = M_\Delta M_\gamma M_\beta M_\alpha \),
+After changing the $j$-th solid position, point $a$ of the solid is described by the radius-vector $o_j + M_j(a - o_j)$, where $o_j$ is the origin of the $j$-th local coordinate system, and vector $n$ of the $j$-th solid takes the value $M_j n$. Matrix $M_j$ is represented in expanded form (1.14.7), and the radius-vectors of the points and vectors—in the forms (1.14.8) and (1.14.9) respectively. Matrix $M_j$ describes the change of position of the $j$-th solid, and is expressed in terms of quantities $\Delta \alpha_j, \Delta \beta_j, \Delta \gamma_j, \Delta x_j, \Delta y_j, \Delta z_j$. Matrix $M_j$ is obtained by the product of three rotation matrices and a displacement matrix: $M_j = M_\Delta M_\gamma M_\beta M_\alpha$,
 
 $$
 M_\Delta = \begin{bmatrix}
@@ -140,7 +141,7 @@ M_\Delta = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-— matrix of displacement by vector \([ \Delta x_j, \Delta y_j, \Delta z_j ]^T \),
+— matrix of displacement by vector $[ \Delta x_j, \Delta y_j, \Delta z_j ]^T$,
 
 $$
 M_\gamma = \begin{bmatrix}
@@ -151,7 +152,7 @@ M_\gamma = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-— matrix of rotation by angle \( \Delta \gamma_j \),
+— matrix of rotation by angle $\Delta \gamma_j$,
 
 $$
 M_\beta = \begin{bmatrix}
@@ -162,7 +163,7 @@ M_\beta = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-— matrix of rotation by angle \( \Delta \beta_j \),
+— matrix of rotation by angle $\Delta \beta_j$,
 
 $$
 M_\alpha = \begin{bmatrix}
@@ -173,11 +174,11 @@ M_\alpha = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-— matrix of rotation by angle \( \Delta \alpha_j \).
+— matrix of rotation by angle $\Delta \alpha_j$.
 
 When imposing geometric constraints on the solids of the model, we use markers. Markers help to get the positions of the points and the directions of the vectors in the global coordinate system. A marker is described by a starting point, by the vector of the normal, and by the vector of direction orthogonal to the normal vector. The position of the marker in the local coordinate system associated with the solid must be known and fixed. Knowing the position of the marker in the local coordinate system, we can obtain the coordinates of its starting point and the components of its vectors in the global coordinate system, in which geometric constraint equations are formed. For every geometric constraint linking two solids, two markers are constructed. For each solid, we can construct as many markers as the number of geometric constraints linking the solid with other solids. With the help of markers, we compose equations by combination of which geometric constraints can be constructed.
 
-In order to match a given point \( a_j \) of the \( j \)-th solid with a given point \( a_k \) of the \( k \)-th solid, construct two markers with origins at the matching points, and require the satisfaction of the vector equality
+In order to match a given point $a_j$ of the $j$-th solid with a given point $a_k$ of the $k$-th solid, construct two markers with origins at the matching points, and require the satisfaction of the vector equality
 
 $$
 o_j + M_j(a_j - o_j) = o_k + M_k(a_k - o_k).
@@ -190,36 +191,40 @@ $$| o_j + M_j(a_j - o_j) - o_k - M_k(a_k - o_k) | = d. $$
 
 To locate a given point $b_j$ of the $j$-th solid at distance $d$ from a given plane of the $k$-th solid, construct a marker with its starting point at $b_j$, and a marker whose starting point and normal coincide with the starting point and the normal of the given plane of the $k$-th solid; and require satisfaction of the equality
 
-$$ (o_j + M_j(b_j - o_j) - o_k) \cdot (M_k n_k) = d, $$
+$$
+(o_j + M_j(b_j - o_j) - o_k) \cdot (M_k n_k) = d, $$
 
 where $n_k$ is the normal to the given plane of the $k$-th solid. This equation reduces the number of degrees of freedom of one of the solids by one. In the particular case when $d=0$, the above equation describes the coincidence of the point and the plane.
 
 In order to match a given point $c_j$ of the $j$-th solid with a given axis of the $k$-th solid, construct a marker starting at point $c_j$ and a marker with its starting point and normal coinciding with the origin and the direction of the given axis of the $k$-th solid; and require satisfaction of equality
 
-$$ (o_j + M_j(c_j - o_j) - o_k) \cdot (M_k d_k) = 0, $$
+$$
+(o_j + M_j(c_j - o_j) - o_k) \cdot (M_k d_k) = 0, $$
 
 where $d_k$ is the vector of the marker direction of the $k$-th solid orthogonal to the given axis. The above equation reduces the number of degrees of freedom of one of the solids by two.
 
 To make the given axis of the $j$-th solid parallel to a given plane of the $k$-th solid, construct two markers. Superpose the starting point and the normal of the first marker with the starting point and the direction of the given axis of the $j$-th solid; superpose the starting point and the normal of the second marker with the beginning and the normal of the given plane of the $k$-th solid, and require satisfaction of equality
 
-$$ (M_j n_j) \cdot (M_k n_k) = 0, $$
+$$
+(M_j n_j) \cdot (M_k n_k) = 0, $$
 
 where $n_j$ is the direction of the given axis of the $j$-th solid, and $n_k$ is the normal to the given plane of the $k$-th solid. This equation reduces the number of degrees of freedom of one of the solids by one.
 
 To set the given angle $\theta$, $0 < \theta < \pi$, between a given plane of the $j$-th solid and a given plane of the $k$-th solid, construct two markers with starting points and normals coinciding with the starting points and normals of the given planes, and require satisfaction of equality
 
-$$ (M_j n_j) \cdot (M_k n_k) = \cos \theta, $$
-where \( n_j \) is the normal to the plane of the \( j \)-th solid, and \( n_k \) is the normal to the given plane of the \( k \)-th solid. This equation reduces the number of degrees of freedom of one of the solids by one. In the particular case of \( \cos \theta = 0 \), this equation describes the orthogonality of the planes of the two solids.
+$$
+(M_j n_j) \cdot (M_k n_k) = \cos \theta, $$
+where $n_j$ is the normal to the plane of the $j$-th solid, and $n_k$ is the normal to the given plane of the $k$-th solid. This equation reduces the number of degrees of freedom of one of the solids by one. In the particular case of $\cos \theta = 0$, this equation describes the orthogonality of the planes of the two solids.
 
-For a given plane of the \( j \)-th solid to be parallel to a given plane of the \( k \)-th solid, construct two markers whose starting points and normals coincide with the starting points and normals of the given planes, and require satisfaction of equalities
+For a given plane of the $j$-th solid to be parallel to a given plane of the $k$-th solid, construct two markers whose starting points and normals coincide with the starting points and normals of the given planes, and require satisfaction of equalities
 
 $$
 (M_j n_j) \cdot (M_k d_k) = 0, \quad (M_j n_j) \cdot (M_k (n_k \times d_k)) = 0,
 $$
 
-where \( n_j \) is the normal to the given plane of the \( j \)-th solid, \( n_k \) is the normal of the given plane of the \( k \)-th solid, and \( d_k \) is the direction vector of the marker of the \( k \)-th solid orthogonal to the normal \( n_k \). This equation reduces the number of degrees of freedom of one of the solids by two.
+where $n_j$ is the normal to the given plane of the $j$-th solid, $n_k$ is the normal of the given plane of the $k$-th solid, and $d_k$ is the direction vector of the marker of the $k$-th solid orthogonal to the normal $n_k$. This equation reduces the number of degrees of freedom of one of the solids by two.
 
-With the help of these equations, we construct the geometric constraints that establish the relationships between the elements of the model. Solving the system of equations of geometric constraints, we find changes in the model parameters. Adjust the model in accordance with the found solution. For example, if \( \Delta \alpha_j = \Delta \beta_j = \Delta \gamma_j = \Delta x_j = \Delta y_j = \Delta z_j = 0 \), then matrix \( M_j \) is the identity matrix, and the position of the \( j \)-th solid is not required to change. Otherwise, rotate and move the \( j \)-th solid in accordance with matrix \( M_j \). As a result, the equations imposed by the geometric constraints are satisfied.
+With the help of these equations, we construct the geometric constraints that establish the relationships between the elements of the model. Solving the system of equations of geometric constraints, we find changes in the model parameters. Adjust the model in accordance with the found solution. For example, if $\Delta \alpha_j = \Delta \beta_j = \Delta \gamma_j = \Delta x_j = \Delta y_j = \Delta z_j = 0$, then matrix $M_j$ is the identity matrix, and the position of the $j$-th solid is not required to change. Otherwise, rotate and move the $j$-th solid in accordance with matrix $M_j$. As a result, the equations imposed by the geometric constraints are satisfied.
 
 ### 6.4. Solution of Geometric Constraints Equations
 
@@ -255,22 +260,23 @@ where $\lambda_1, \lambda_2, ..., \lambda_m$ are Lagrange multipliers. To satisf
 $$\Delta p_1 + \lambda_1 \frac{\partial f_1}{\partial p_1} + \lambda_2 \frac{\partial f_2}{\partial p_1} + ... + \lambda_m \frac{\partial f_m}{\partial p_1} = 0,$$
 $$ \Delta p_2 + \lambda_1 \frac{\partial f_1}{\partial p_2} + \lambda_2 \frac{\partial f_2}{\partial p_2} + \ldots + \lambda_m \frac{\partial f_m}{\partial p_2} = 0, $$
 $$ \ldots \ldots \ldots \ldots \ldots \ldots $$
-$$ \Delta p_n + \lambda_1 \frac{\partial f_1}{\partial p_n} + \lambda_2 \frac{\partial f_2}{\partial p_n} + \ldots + \lambda_m \frac{\partial f_m}{\partial p_n} = 0. $$ (6.5.2)
+$$ \Delta p_n + \lambda_1 \frac{\partial f_1}{\partial p_n} + \lambda_2 \frac{\partial f_2}{\partial p_n} + \ldots + \lambda_m \frac{\partial f_m}{\partial p_n} = 0. $$
+(6.5.2)
 
-We have arrived at the system of \( n+m \) equations (6.1.1) and (6.5.2) for \( n+m \) unknowns \( \Delta p_1, \Delta p_2, \ldots, \Delta p_n, \lambda_1, \lambda_2, \ldots, \lambda_m \). The initial approximation of the Lagrange multipliers can be set equal to zero. In the process of solving, they can also be considered close to zero, which simplifies solution of the system.
+We have arrived at the system of $n+m$ equations (6.1.1) and (6.5.2) for $n+m$ unknowns $\Delta p_1, \Delta p_2, \ldots, \Delta p_n, \lambda_1, \lambda_2, \ldots, \lambda_m$. The initial approximation of the Lagrange multipliers can be set equal to zero. In the process of solving, they can also be considered close to zero, which simplifies solution of the system.
 
-Let us apply the conservative method for determining the changes of position of point \( p_1=[x_1 y_1 z_1]^T \) of the first solid and point \( p_2=[x_2 y_2 z_2]^T \) of the second solid upon imposing geometric constraints (6.2.1) specifying distance \( d \) between points \( p_1 \) and \( p_2 \).
+Let us apply the conservative method for determining the changes of position of point $p_1=[x_1 y_1 z_1]^T$ of the first solid and point $p_2=[x_2 y_2 z_2]^T$ of the second solid upon imposing geometric constraints (6.2.1) specifying distance $d$ between points $p_1$ and $p_2$.
 
 The sum of the squares of changes of displacement of the related points is described by the function
 
 $$ \Psi = \frac{1}{2} \left( \Delta x_1^2 + \Delta y_1^2 + \Delta z_1^2 + \Delta x_2^2 + \Delta y_2^2 + \Delta z_2^2 \right). $$
 
-Use the method of Lagrange multipliers to find the minimum of the function \( y \) under condition (6.2.1). A necessary condition for a minimum of function \( y \) under condition (6.2.1) is the vanishing of the partial derivatives, with respect to parameters \( \Delta x_1, \Delta y_1, \Delta z_1, \Delta x_2, \Delta y_2, \) and \( \Delta z_2 \), of the function
+Use the method of Lagrange multipliers to find the minimum of the function $y$ under condition (6.2.1). A necessary condition for a minimum of function $y$ under condition (6.2.1) is the vanishing of the partial derivatives, with respect to parameters $\Delta x_1, \Delta y_1, \Delta z_1, \Delta x_2, \Delta y_2,$ and $\Delta z_2$, of the function
 
 $$ F = \frac{1}{2} \left( \Delta x_1^2 + \Delta y_1^2 + \Delta z_1^2 + \Delta x_2^2 + \Delta y_2^2 + \Delta z_2^2 \right) + $$
 $$ + \lambda \sqrt{(x_2 + \Delta x_2 - x_1 - \Delta x_1)^2 + (y_2 + \Delta y_2 - y_1 - \Delta y_1)^2 + (z_2 + \Delta z_2 - z_1 - \Delta z_1)^2 - d}, $$
 
-where \( \lambda \) is a multiplier to be determined. The desired changes in the coordinates of the points and the multiplier \( \lambda \) are found from the system of equations
+where $\lambda$ is a multiplier to be determined. The desired changes in the coordinates of the points and the multiplier $\lambda$ are found from the system of equations
 
 $$ \sqrt{(x_2 + \Delta x_2 - x_1 - \Delta x_1)^2 + (y_2 + \Delta y_2 - y_1 - \Delta y_1)^2 + (z_2 + \Delta z_2 - z_1 - \Delta z_1)^2} - d = 0, $$
 $$ \Delta x_1 + \lambda \frac{x_1 + \Delta x_1 - x_2 - \Delta x_2}{\sqrt{(x_2 + \Delta x_2 - x_1 - \Delta x_1)^2 + (y_2 + \Delta y_2 - y_1 - \Delta y_1)^2 + (z_2 + \Delta z_2 - z_1 - \Delta z_1)^2}} = 0, $$
@@ -286,18 +292,18 @@ $$ \Delta x_1 = \frac{d-g}{2g}(x_1 - x_2), \quad \Delta y_1 = \frac{d-g}{2g}(y_1
 $$ \Delta x_2 = \frac{d-g}{2g}(x_2 - x_1), \quad \Delta y_2 = \frac{d-g}{2g}(y_2 - y_1), \quad \Delta z_2 = \frac{d-g}{2g}(z_2 - z_1), $$
 $$ \lambda = \frac{g-d}{2}, $$
 
-where \( g = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} \). It can be proved that the found solution is the point of the minimum of function \( F \). The points are moved by the same distance along the straight line passing through points \( p_1 \) and \( p_2 \). In this formulation of the problem, the points are equal, and the equations and the solution of the system of equations are symmetric.
+where $g = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$. It can be proved that the found solution is the point of the minimum of function $F$. The points are moved by the same distance along the straight line passing through points $p_1$ and $p_2$. In this formulation of the problem, the points are equal, and the equations and the solution of the system of equations are symmetric.
 
-If we fix point \( p_1 \) in this example, function \( F \) takes the form
+If we fix point $p_1$ in this example, function $F$ takes the form
 
 $$ F = \frac{1}{2}(\Delta x_2^2 + \Delta y_2^2 + \Delta z_2^2) + \lambda \left( \sqrt{(x_2 + \Delta x_2 - x_1)^2 + (y_2 + \Delta y_2 - y_1)^2 + (z_2 + \Delta z_2 - z_1)^2} - d \right). $$
 
-This function reaches a minimum at the change in coordinates of point \( p_2 \) and at the multiplier \( \lambda \):
+This function reaches a minimum at the change in coordinates of point $p_2$ and at the multiplier $\lambda$:
 
 $$ \Delta x_2 = \frac{d-g}{g}(x_2 - x_1), \quad \Delta y_2 = \frac{d-g}{g}(y_2 - y_1), \quad \Delta z_2 = \frac{d-g}{g}(z_2 - z_1), $$
 $$ \lambda = g-d, $$
 
-where \( g = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} \). Point \( p_2 \) is moved along the straight line passing through points \( p_1 \) and \( p_2 \).
+where $g = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$. Point $p_2$ is moved along the straight line passing through points $p_1$ and $p_2$.
 
 ### 6.6. The Decomposition Method
 
@@ -310,7 +316,8 @@ The minimum number of model elements forming a whole rigid unit is two. The maxi
 
 Let $k_i$ be the number of geometric constraints removing $i$ degrees of freedom of a model consisting of $n$ solids. Then the formal number of degrees of freedom of the model with geometric constraints that do not contradict or duplicate each other is equal to
 
-$$m_n = 6n - k_1 - 2k_2 - 3k_3 - 4k_4 - 5k_5 - 6k_6.$$  \hspace{1cm} (6.6.1)
+$$m_n = 6n - k_1 - 2k_2 - 3k_3 - 4k_4 - 5k_5 - 6k_6.$$
+(6.6.1)
 
 The formal number of degrees of freedom characterizes the mobility of a model. A graph constructed for a model may contain loops. If the graph constructed for a certain set of model elements is a loop and the formal number of degrees of freedom of these elements is less than or equal to six, then this set of model elements represents a whole rigid unit.
 
