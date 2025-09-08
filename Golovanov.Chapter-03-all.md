@@ -269,10 +269,8 @@ To find an initial approximation, we choose a set of trial points for each curve
 The intersection points of some analytical curves can be found without using numerical methods. For example, solving the quadratic equation, one can find points of intersection of the straight line with second order curves.
 The osculating points of curves $c_1(t_1)$ and $c_2(t_2)$ can be found by solving the system of equations
 
-$$\begin{align*}
-(c_1(t_1) - c_2(t_2)) \cdot \frac{dc_1}{dt_1} &= 0, \\
-(c_2(t_2) - c_1(t_1)) \cdot \frac{dc_2}{dt_2} &= 0.
-\end{align*}$$
+$$(c_1(t_1) - c_2(t_2)) \cdot \frac{dc_1}{dt_1} = 0,$$
+$$(c_2(t_2) - c_1(t_1)) \cdot \frac{dc_2}{dt_2} = 0.$$
 
 Besides the intersection and the osculating points, the points at which the tangent lines are parallel to each other and the segment connecting the osculating points orthogonal to the tangent lines also satisfy this system.
 

@@ -71,7 +71,7 @@ $$ u_{\text{min}} \leq t \leq u_{\text{max}}, \quad 0 \leq w \leq 1, $$
 
 where $a_v(u, v_{\text{max}}) = \left. \frac{\partial a(u, v)}{\partial v} \right|_{v=v_{\text{max}}}$ is the partial derivative with respect to the fixed parameter of the radius vector of the first conjunct surface,
 
-$$ b_v(u, v_{\text{min}}) = \left. \frac{\partial b(u, v)}{\partial v} \right|_{v=v_{\text{min}}} $$ 
+$$ b_v(u, v_{\text{min}}) = \left. \frac{\partial b(u, v)}{\partial v} \right|_{v=v_{\text{min}}} $$
 
 is the partial derivative with respect to the fixed parameter of the radius vector of the second conjunct surface, are $k_a$ and $k_b$ are coefficients normalizing derivatives $a_v(u, v_{\text{max}})$ and $b_v(u, v_{\text{min}})$ respectively. Coefficients $k_a$ and $k_b$ are obtained by dividing the average distance between the edges of the conjunct surfaces
 by the average length of the partial derivatives $a_v(u,v_{\text{max}})$ and $b_v(u,v_{\text{min}})$. The bridge surface is shown in Fig. 2.4.3.
@@ -284,9 +284,7 @@ $$
 
 for the outer curves. The mixed derivatives are computed using the partial derivatives $s_v(u,v)$ and $s_u(u,v)$
 
-$$
-s_{uv}(u_j, v_i) = \frac{1}{2} \left( \frac{\partial s_u(u_j, v)}{\partial v} \right)_{v=v_i} + \frac{\partial s_v(u, v_i)}{\partial u} \right)_{u=u_j}.
-$$
+$$s_{uv}(u_j, v_i) = \frac{1}{2} \left( \frac{\partial s_u(u_j, v)}{\partial v} \big|_{v=v_i} +  \frac{\partial s_v(u, v_i)}{\partial u} \big|_{u=u_j}\right).$$
 
 Suppose that in (2.5.7) the curves $c_i(u)$ and $b_j(v)$ of the mesh are the cubic Hermite splines (1.3.10) constructed on the set of points $p_{ji}$ and are determined by the relations:
 
@@ -448,8 +446,7 @@ The higher-order derivatives are calculated similarly.
 A rational Bezier surface can describe a part of a second-order surface as well as a part of a torus surface. For this purpose it is easy to use a rational Bezier surface of the second order constructed on nine control points:
 
 $$
-r(u, v) = \begin{bmatrix}
-(1-v)^2 & 2v(1-v) & v^2 \\
+r(u, v) = \frac{[(1-v)^2 , 2v(1-v)  , v^2 ] \cdot  \begin{bmatrix}
 w_u p_{00} & w_u p_{01} & p_{02} \\
 w_v p_{10} & w_v p_{11} & w_v p_{12} \\
 p_{20} & w_u p_{21} & p_{22}
@@ -457,12 +454,8 @@ p_{20} & w_u p_{21} & p_{22}
 (1-u)^2 \\
 2u(1-u) \\
 u^2
-\end{bmatrix},
-$$
-
-$$
-(1-u)^2 + 2u(1-u)w_u + u^2 \cdot (1-v)^2 + 2v(1-v)w_v + v^2 \right) \tag{2.7.4}
-$$
+\end{bmatrix}}{(1-u)^2 + 2u(1-u)w_u + u^2 \cdot (1-v)^2 + 2v(1-v)w_v + v^2 } ,$$
+(2.7.4)
 
 The weights of the corner points are equal to unity; and for the remaining points, we introduce the weights $w_u$ and $w_v$, which have indexes of the parametric directions of the surface. The type of the surface obtained by formula (2.7.4) depends on the position of the control points and weights $w_u$ and $w_v$. If the sections of the surface (2.7.4) along the lines $u=\text{const}$ or $v=\text{const}$ are circular arcs with open angles $\alpha_u$ and $\alpha_v$, respectively, then $w_u = \cos(\alpha_u/2)$ and $w_v = \cos(\alpha_v/2)$.
 

@@ -413,8 +413,11 @@ $$ r(u,v) = p + (R + r \cos v) \cos u \cdot i_x + (R + r \cos v) \sin u \cdot i_
 $$ u \in [0, 2\pi], \quad v \in [v_{\min}, v_{\max}], $$
 
 where $r$ is the radius of the torus tube, and $R$ is the radius of the tube axis. The origin of the local coordinate system is placed at the torus center, while the basis vector $i_z$ is directed along the torus axis; see Fig. 2.2.2. Scalar functions $x(u,v) = (R + r \cos v) \cos u,$
+
 $$ y(u,v) = (R + r \cos v) \sin u, $$
-$$ z(u,v) = r \sin v $$ are related by the equation
+$$ z(u,v) = r \sin v $$
+
+are related by the equation
 
 $$ \left( \sqrt{x^2 + y^2} - R \right)^2 + z^2 = r^2. $$
 
