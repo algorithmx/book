@@ -98,28 +98,30 @@ Introduction ..................................... 11
 - 6.4. Solution of Geometric Constraints Equations ............................... 267
 - 6.5. The Conservative Method ............................................................ 268
 - 6.6. The Decomposition Method ........................................................ 270
-Chapter 7. Geometric Model Application
 
-7.1. Geometric Model Content ........................................... 274
-7.2. Geometric Model Uses .............................................. 275
-7.3. Vector Image Construction ......................................... 276
-7.4. Optical Properties Modeling ....................................... 280
-7.5. Raster Image Construction .......................................... 285
-7.6. Triangulation .......................................................... 290
-7.7. Surface Triangulation ................................................ 296
-7.8. Shell Triangulation .................................................... 298
-7.9. Inertial Properties ..................................................... 299
-7.10. Calculation of Inertial Characteristics .......................... 302
-7.11. Principal Moments of Inertia ..................................... 306
+## Chapter 7. Geometric Model Application
+- 7.1. Geometric Model Content ........................................... 274
+- 7.2. Geometric Model Uses .............................................. 275
+- 7.3. Vector Image Construction ......................................... 276
+- 7.4. Optical Properties Modeling ....................................... 280
+- 7.5. Raster Image Construction .......................................... 285
+- 7.6. Triangulation .......................................................... 290
+- 7- 7. Surface Triangulation ................................................ 296
+- 7.8. Shell Triangulation .................................................... 298
+- 7.9. Inertial Properties ..................................................... 299
+- 7.10. Calculation of Inertial Characteristics .......................... 302
+- 7.11. Principal Moments of Inertia ..................................... 306
 
-Appendix. Coordinate Systems ........................................... 313
-A.1. Affine Coordinates .................................................... 313
-A.2. Modification of Vectors and Points ............................... 316
-A.3. Homogeneous Coordinates ......................................... 318
-A.4. Curvilinear Coordinates ............................................ 320
-A.5. Differentiation in Curvilinear Coordinates ....................... 324
-A.6. Tensors in Curvilinear Coordinates ............................... 328
-A.7. Examples of Tensors ................................................ 333
-A.8. Orthogonal Curvilinear Coordinates ............................. 339
+## Appendix. 
+
+Coordinate Systems ........................................... 313
+- A.1. Affine Coordinates .................................................... 313
+- A.2. Modification of Vectors and Points ............................... 316
+- A.3. Homogeneous Coordinates ......................................... 318
+- A.4. Curvilinear Coordinates ............................................ 320
+- A.5. Differentiation in Curvilinear Coordinates ....................... 324
+- A.6. Tensors in Curvilinear Coordinates ............................... 328
+- A.7. Examples of Tensors ................................................ 333
+- A.8. Orthogonal Curvilinear Coordinates ............................. 339
 
 References ........................................................................ 344

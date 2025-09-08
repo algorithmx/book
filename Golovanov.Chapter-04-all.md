@@ -436,7 +436,8 @@ $$ e_{2i}(t) = \begin{cases} r(u_i(t), v_i(t)) & t \in [t_{\text{min}}, t_{\text
 
 with positive flag. The normals to the second main face and to the surface $r(u,v)$ coincide. To describe the loop of the side face of the solid based on surface $s_i(t,w)$, construct the curves of intersection of this surface with the adjacent side surfaces:
 
-$$ e_{i-1}(w) = \begin{cases} s_{i-1}(t_{i-1\text{max}}, w) & , \\ s_i(t_{i\text{min}}, w) & , \end{cases} \quad e_i(w) = \begin{cases} s_i(t_{i\text{max}}, w) & , \\ s_{i+1}(t_{i+1\text{min}}, w) & , \end{cases} $$
+$$ e_{i-1}(w) = \begin{cases} s_{i-1}(t_{i-1\text{max}}, w)   \\ s_i(t_{i\text{min}}, w)  \end{cases} $$
+$$e_i(w) = \begin{cases} s_i(t_{i\text{max}}, w)  \\ s_{i+1}(t_{i+1\text{min}}, w)  \end{cases} $$
 
 $w \in [0, 1]$.
 

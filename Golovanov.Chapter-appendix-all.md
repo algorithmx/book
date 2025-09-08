@@ -178,8 +178,11 @@ $$
 \mathbf{A} = (1 - \cos \alpha) \mathbf{v} \mathbf{v} + \cos \alpha \mathbf{E} + \sin \alpha \mathbf{v} \times,
 $$
 
-where \( \mathbf{v} \mathbf{v} = \begin{bmatrix} v_1 v_1 & v_1 v_2 & v_1 v_3 \\ v_2 v_1 & v_2 v_2 & v_2 v_3 \\ v_3 v_1 & v_3 v_2 & v_3 v_3 \end{bmatrix}, \quad \mathbf{E} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad \mathbf{v} \times = \begin{bmatrix} 0 & -v_3 & v_2 \\ v_3 & 0 & -v_1 \\ -v_2 & v_1 & 0 \end{bmatrix}, \text{ and } v_1, v_2, v_3 \text{ are components of unit vector } \mathbf{v}.
+where 
+$$ 
+    \mathbf{v} \mathbf{v} = \begin{bmatrix} v_1 v_1 & v_1 v_2 & v_1 v_3 \\ v_2 v_1 & v_2 v_2 & v_2 v_3 \\ v_3 v_1 & v_3 v_2 & v_3 v_3 \end{bmatrix}, \quad \mathbf{E} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad \mathbf{v} \times = \begin{bmatrix} 0 & -v_3 & v_2 \\ v_3 & 0 & -v_1 \\ -v_2 & v_1 & 0 \end{bmatrix}
 $$
+and $v_1, v_2, v_3$ are components of unit vector $\mathbf{v}$.
 
 Matrix $\mathbf{A}$ is orthogonal. When transposing it, only the sign of its last term is changed; this corresponds to rotation of the point by the angle $\alpha$.
 
@@ -270,16 +273,17 @@ p_1 \\
 p_2 \\
 p_3 \\
 1
-\end{bmatrix},
-$$
+\end{bmatrix},$$
 
-where $$
+where 
+$$
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23} \\
 a_{31} & a_{32} & a_{33}
-\end{bmatrix} = A^{-1}, \quad
-\begin{bmatrix}
+\end{bmatrix} = A^{-1},$$
+
+$$\begin{bmatrix}
 o_1 \\
 o_2 \\
 o_3
@@ -288,8 +292,7 @@ o_3
 r_1 \\
 r_2 \\
 r_3
-\end{bmatrix}.
-$$
+\end{bmatrix}.$$
 
 If the basis $i_1, i_2, i_3$ is orthonormal, the inverse transformation (A.1.4) has the form
 
